@@ -4,6 +4,7 @@ export interface WebpackPaths {
   entry: string
   build: string
   html: string
+  src: string
 }
 
 export interface IBuildOptions {

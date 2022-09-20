@@ -1,3 +1,3 @@
 import { lazy } from "react";
 
-export default lazy(() => import('./AboutPage'))
+export default lazy(() => import('./ui/AboutPage'))
