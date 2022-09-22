@@ -1,6 +1,6 @@
-import webpack from 'webpack';
+import webpack from 'webpack'
 
-import { IBuildOptions } from './types/config';
+import { IBuildOptions } from './types/config'
 
 export function webpackResolvers(options: IBuildOptions): webpack.ResolveOptions {
   return {

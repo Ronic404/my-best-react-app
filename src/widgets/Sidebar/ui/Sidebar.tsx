@@ -13,12 +13,12 @@ interface ISidebarProps {
 export const Sidebar: FC<ISidebarProps> = ({ className }) => {
   const [collapsed, setCollapsed] = useState<boolean>(false)
 
-  const onToggle = () => {
+  const onToggle = (): void => {
     setCollapsed(prev => !prev)
   }
 
   return (
-    <div className={classNames(styles.sidebar, {[styles.collapsed]: collapsed}, [className])}>
+    <div className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])}>
       <button onClick={onToggle}>toggle</button>
       <div className={classNames(styles.switchers, {}, [])}>
         <ThemeSwitcher />

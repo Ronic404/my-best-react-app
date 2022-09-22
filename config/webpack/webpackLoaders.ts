@@ -41,5 +41,16 @@ export function webpackLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] 
     },
   }
 
-  return [tsLoader, cssLoader, svgLoader, fileLoader]
+  const babelLoader = {
+    test: /\.tsx?$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  }
+
+  return [babelLoader, tsLoader, cssLoader, svgLoader, fileLoader]
 }

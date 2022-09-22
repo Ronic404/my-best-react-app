@@ -1,13 +1,13 @@
-import { FC } from "react"
+import { FC } from 'react'
 
-import { AppLink } from "shared/ui/AppLink";
+import { AppLink } from 'shared/ui/AppLink'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { RoutePaths } from "shared/config/routeConfig/routeConfig";
+import { RoutePaths } from 'shared/config/routeConfig/routeConfig'
 
 import styles from './Navbar.module.scss'
 
 interface INavbarProps {
-  className?: string;
+  className?: string
 }
 
 export const Navbar: FC<INavbarProps> = ({ className }) => {

@@ -8,7 +8,6 @@ import { Button } from 'shared/ui/Button'
 import DarkIcon from 'shared/assets/icons/theme-dark.svg'
 import LightIcon from 'shared/assets/icons/theme-light.svg'
 
-
 import styles from './ThemeSwitcher.module.scss'
 
 interface IThemeSwitcherProps {

@@ -1,3 +1,3 @@
-import { lazy } from "react";
+import { lazy } from 'react'
 
-export default lazy(() => import('./ui/AboutPage'))
+export default lazy(async () => await import('./ui/AboutPage'))
