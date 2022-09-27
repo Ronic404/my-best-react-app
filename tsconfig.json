@@ -18,5 +18,11 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./config/jest/jest-setup.ts",
+    "./config/jest/__mocks__/svg.tsx",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ],
 }

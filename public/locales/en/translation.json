@@ -4,5 +4,6 @@
   "notFoundPage": "Page not found",
   "wentWrong": "Something went wrong",
   "refreshPage": "Refresh page",
-  "throwError": "Throw error"
+  "throwError": "Throw error",
+  "toggle": "Toggle"
 }
