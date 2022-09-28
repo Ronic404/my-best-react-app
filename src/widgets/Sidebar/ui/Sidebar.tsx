@@ -7,7 +7,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 
 import styles from './Sidebar.module.scss'
 
-interface ISidebarProps {
+export interface ISidebarProps {
   className?: string
 }
 

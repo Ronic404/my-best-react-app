@@ -5,9 +5,9 @@ import { classNames } from 'shared/lib/classNames/classNames'
 
 import styles from './AppLink.module.scss'
 
-type AppLinkTheme = 'primary' | 'secondary'
+type AppLinkTheme = 'primary' | 'secondary' | 'red'
 
-interface IAppLinkProps extends LinkProps {
+export interface IAppLinkProps extends LinkProps {
   className?: string
   theme?: AppLinkTheme
 }

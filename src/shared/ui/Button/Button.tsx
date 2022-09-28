@@ -4,9 +4,9 @@ import { classNames } from 'shared/lib/classNames/classNames'
 
 import styles from './Button.module.scss'
 
-type ThemeButton = 'clear'
+type ThemeButton = 'clear' | 'outline'
 
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   theme?: ThemeButton
 }

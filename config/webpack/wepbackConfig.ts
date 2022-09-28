@@ -2,7 +2,7 @@ import webpack from 'webpack'
 
 import { IBuildOptions } from './types/config'
 
-import { webpackLoaders } from './webpackLoaders'
+import { webpackLoaders } from './loaders/webpackLoaders'
 import { webpackPlugins } from './webpackPlugins'
 import { webpackResolvers } from './webpackResolvers'
 import { webpackDevServer } from './webpackDevServer'

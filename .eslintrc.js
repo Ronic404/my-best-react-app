@@ -3,29 +3,19 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'standard-with-typescript',
-    'plugin:i18next/recommended'
-  ],
-  overrides: [
-    {
-      files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 'off'
-      }
+  extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off'
     }
-  ],
+  }],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json'
   },
-  plugins: [
-    'react',
-    'i18next'
-  ],
+  plugins: ['react', 'i18next'],
   rules: {
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
@@ -33,6 +23,11 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
-    'i18next/no-literal-string': ['error', { markupOnly: true }]
+    '@typescript-eslint/consistent-type-assertions': 'off',
+    'react/display-name': 'off',
+    '@typescript-eslint/prefer-includes': 'off',
+    'i18next/no-literal-string': ['error', {
+      markupOnly: true
+    }]
   }
 }

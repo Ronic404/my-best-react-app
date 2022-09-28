@@ -20,8 +20,8 @@
     }
   },
   "include": [
-    "./config/jest/jest-setup.ts",
-    "./config/jest/__mocks__/svg.tsx",
+    "./config/**/*.ts",
+    "./config/**/*.tsx",
     "./src/**/*.ts",
     "./src/**/*.tsx"
   ],
