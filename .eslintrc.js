@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', 'i18next'],
   rules: {
+    indent: ['error', 2],
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/no-floating-promises': 'off',

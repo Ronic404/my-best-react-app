@@ -15,7 +15,7 @@ const NotFoundPage: FC<INotFoundPageProps> = ({ className }) => {
   return (
     <div className={classNames(styles.page, {}, [className])}>
       { t('notFoundPage') }
-   </div>
+    </div>
   )
 }
 

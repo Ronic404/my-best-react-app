@@ -21,6 +21,6 @@ export const AppLink: FC<IAppLinkProps> = ({
   return (
     <Link className={classNames(styles.appLink, {}, [className, styles[theme]])} to={to}>
       {children}
-   </Link>
+    </Link>
   )
 }

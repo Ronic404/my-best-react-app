@@ -23,6 +23,6 @@ export const PageError: FC<IPageErrorProps> = ({ className }) => {
       <Button onClick={reloadPage}>
         {t('refreshPage')}
       </Button>
-   </div>
+    </div>
   )
 }
