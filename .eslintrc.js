@@ -26,8 +26,8 @@ module.exports = {
     '@typescript-eslint/consistent-type-assertions': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/prefer-includes': 'off',
-    'i18next/no-literal-string': ['error', {
-      markupOnly: true
+    'i18next/no-literal-string': ['warn', {
+      markupOnly: true, onlyAttribute: ['']
     }]
   }
 }
