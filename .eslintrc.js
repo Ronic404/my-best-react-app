@@ -5,9 +5,10 @@ module.exports = {
   },
   extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   overrides: [{
-    files: ['**/src/**/*.test.{ts,tsx}'],
+    files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
     rules: {
-      'i18next/no-literal-string': 'off'
+      'i18next/no-literal-string': 'off',
+      'max-len': 'off'
     }
   }],
   parserOptions: {
@@ -15,7 +16,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json'
   },
-  plugins: ['react', 'i18next'],
+  plugins: ['react', 'i18next', 'react-hooks'],
   rules: {
     indent: ['error', 2],
     '@typescript-eslint/comma-dangle': 'off',
@@ -25,10 +26,12 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/consistent-type-assertions': 'off',
-    'react/display-name': 'off',
     '@typescript-eslint/prefer-includes': 'off',
     'i18next/no-literal-string': ['warn', {
       markupOnly: true, onlyAttribute: ['']
-    }]
+    }],
+    'react/display-name': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn'
   }
 }

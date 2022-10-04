@@ -25,6 +25,12 @@ Clear.args = {
   theme: 'clear'
 } as IButtonProps
 
+export const ClearInverted = Template.bind({})
+ClearInverted.args = {
+  children: 'ClearInverted',
+  theme: 'clearInverted'
+} as IButtonProps
+
 export const Outline = Template.bind({})
 Outline.args = {
   children: 'Outline',
