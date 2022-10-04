@@ -8,5 +8,7 @@
   "throwError": "Throw error",
   "toggle": "Toggle",
   "about": "About",
-  "logIn": "Log in"
+  "logIn": "Log in",
+  "increment": "Increment",
+  "decrement": "Decrement"
 }
