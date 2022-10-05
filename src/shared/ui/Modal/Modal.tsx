@@ -1,7 +1,5 @@
 import { FC, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 
-import { useTheme } from 'app/providers/ThemeProvider'
-
 import { Portal } from 'shared/ui/Portal'
 import { classNames } from 'shared/lib/classNames/classNames'
 
@@ -17,8 +15,6 @@ export interface IModalProps {
 const ANIMATION_DELAY = 300
 
 export const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose }) => {
-  const { theme } = useTheme()
-
   const [isClosing, setIsClosing] = useState<boolean>(false)
   const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
@@ -57,7 +53,7 @@ export const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose })
 
   return (
     <Portal>
-      <div className={classNames(styles.modal, mods, [className, theme])}>
+      <div className={classNames(styles.modal, mods, [className])}>
         <div className={classNames(styles.overlay)} onClick={closeModal}>
           <div className={classNames(styles.content)} onClick={handleClickContent}>
             {children}
