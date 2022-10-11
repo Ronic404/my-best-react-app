@@ -9,13 +9,15 @@ export interface IModalProps {
   className?: string
   children: ReactNode
   isOpen: boolean
+  lazy?: boolean
   onClose: () => void
 }
 
 const ANIMATION_DELAY = 300
 
-export const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose }) => {
+export const Modal: FC<IModalProps> = ({ className, children, isOpen, lazy, onClose }) => {
   const [isClosing, setIsClosing] = useState<boolean>(false)
+  const [isMounted, setIsMounted] = useState<boolean>(false)
   const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
   const mods: Record<string, boolean> = {
@@ -39,6 +41,12 @@ export const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose })
 
   useEffect(() => {
     if (isOpen) {
+      setIsMounted(true)
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    if (isOpen) {
       window.addEventListener('keydown', handleKeydownEscape)
     }
     return () => {
@@ -49,6 +57,10 @@ export const Modal: FC<IModalProps> = ({ className, children, isOpen, onClose })
 
   const handleClickContent = (event: MouseEvent<HTMLDivElement>): void => {
     event.stopPropagation()
+  }
+
+  if (lazy && !isMounted) {
+    return null
   }
 
   return (

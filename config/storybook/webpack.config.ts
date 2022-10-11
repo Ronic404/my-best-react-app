@@ -12,7 +12,7 @@ export default ({ config }: { config: Configuration }): Configuration => {
     src: path.resolve(__dirname, '../../src'),
   }
 
-  config.resolve.modules.push(paths.src)
+  config.resolve.modules.push(paths.src, 'node_modules')
 
   config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
     if (/svg/.test(rule.test as string)) {

@@ -10,5 +10,7 @@
   "about": "About",
   "logIn": "Log in",
   "increment": "Increment",
-  "decrement": "Decrement"
+  "decrement": "Decrement",
+  "enterUsername": "Enter username",
+  "enterPassword": "Enter password"
 }
