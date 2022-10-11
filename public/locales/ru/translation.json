@@ -9,8 +9,11 @@
   "toggle": "Переключатель",
   "about": "О сайте",
   "logIn": "Войти",
+  "logOut": "Выйти",
   "increment": "Увеличить",
   "decrement": "Уменьшить",
   "enterUsername": "Введите имя",
-  "enterPassword": "Введите пароль"
+  "enterPassword": "Введите пароль",
+  "authForm": "Форма авторизации",
+  "error": "Ошибка"
 }

@@ -1,4 +1,4 @@
-import { Configuration, RuleSetRule } from 'webpack'
+import { Configuration, DefinePlugin, RuleSetRule } from 'webpack'
 import path from 'path'
 
 import { WebpackPaths } from '../webpack/types/config'
@@ -27,6 +27,10 @@ export default ({ config }: { config: Configuration }): Configuration => {
     issuer: /\.[jt]sx?$/,
     use: ['@svgr/webpack'],
   })
+
+  config.plugins.push(new DefinePlugin({
+    __IS_DEV__: true
+  }))
 
   return config
 }

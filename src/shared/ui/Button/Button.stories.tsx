@@ -93,3 +93,10 @@ SquareSizeXL.args = {
   square: true,
   size: 'xl'
 } as IButtonProps
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  children: 'Disabled',
+  theme: 'outline',
+  disabled: true
+} as IButtonProps

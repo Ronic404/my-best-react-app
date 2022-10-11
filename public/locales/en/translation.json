@@ -9,8 +9,11 @@
   "toggle": "Toggle",
   "about": "About",
   "logIn": "Log in",
+  "logOut": "Log out",
   "increment": "Increment",
   "decrement": "Decrement",
   "enterUsername": "Enter username",
-  "enterPassword": "Enter password"
+  "enterPassword": "Enter password",
+  "authForm": "Auth form",
+  "error": "Error"
 }

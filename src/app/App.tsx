@@ -1,4 +1,5 @@
-import { FC, Suspense } from 'react'
+import { FC, Suspense, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
 import { AppRouter } from './providers/router'
 
@@ -7,7 +8,15 @@ import { Sidebar } from 'widgets/Sidebar'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 
+import { userActions } from '../entities/User'
+
 export const App: FC = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(userActions.initAuthData())
+  }, [dispatch])
+
   return (
     <div className={classNames('app', {}, [])}>
       <Suspense fallback={<></>}>

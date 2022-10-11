@@ -1,10 +1,12 @@
 const fs = require('fs')
 const jsonServer = require('json-server')
-// const jwt = require('jsonwebtoken')
 const path = require('path')
 
 const server = jsonServer.create()
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'))
+
+server.use(jsonServer.defaults({}))
+server.use(jsonServer.bodyParser)
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
@@ -13,17 +15,6 @@ server.use(async (req, res, next) => {
   })
   next()
 })
-
-// Проверям авторизован ли пользователь
-server.use((req, res, next) => {
-  if (!req.headers.authorization) {
-    return res.status(403).json({ message: 'AUTH ERROR' })
-  }
-  next()
-})
-
-server.use(jsonServer.defaults())
-server.use(router)
 
 // Эндпоинт для логина
 server.post('/login', (req, res) => {
@@ -39,6 +30,16 @@ server.post('/login', (req, res) => {
 
   return res.status(403).json({ message: 'AUTH ERROR' })
 })
+
+// Проверям авторизован ли пользователь
+server.use((req, res, next) => {
+  if (!req.headers.authorization) {
+    return res.status(403).json({ message: 'AUTH ERROR' })
+  }
+  next()
+})
+
+server.use(router)
 
 // Запуск сервера
 server.listen(8000, () => {
