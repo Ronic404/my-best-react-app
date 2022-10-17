@@ -6,10 +6,11 @@ import { createReducerManager } from './reducerManager'
 import { counterReducer } from '../../../../entities/Counter'
 import { userReducer } from '../../../../entities/User'
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function createReduxStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
-): ReturnType<typeof configureStore> {
+) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
@@ -29,3 +30,5 @@ export function createReduxStore(
 
   return store
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']

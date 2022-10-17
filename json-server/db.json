@@ -5,5 +5,15 @@
       "username": "admin",
       "password": "123"
     }
-  ]
+  ],
+  "profile": {
+    "first": "Alex",
+    "lastname": "Chubukov",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Izhevsk",
+    "username": "admin",
+    "avatar": "https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo"
+  }
 }

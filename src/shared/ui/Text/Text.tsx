@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { memo } from 'react'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 
@@ -11,7 +11,7 @@ export interface ITextProps {
   theme?: 'primary' | 'error'
 }
 
-export const Text: FC<ITextProps> = ({ className, title, text, theme = 'primary' }) => {
+export const Text = memo(({ className, title, text, theme = 'primary' }: ITextProps) => {
   return (
     <div className={classNames(styles.text, { [styles[theme]]: true }, [className])}>
       {title &&
@@ -22,4 +22,4 @@ export const Text: FC<ITextProps> = ({ className, title, text, theme = 'primary'
       }
     </div>
   )
-}
+})
