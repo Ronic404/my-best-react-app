@@ -18,7 +18,7 @@ export const loginSlice = createSlice({
     },
     setPassword: (state, action: PayloadAction<string>) => {
       state.password = action.payload
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -33,7 +33,7 @@ export const loginSlice = createSlice({
         state.isLoading = false
         state.error = action.payload
       })
-  }
+  },
 })
 
 export const { actions: loginActions } = loginSlice

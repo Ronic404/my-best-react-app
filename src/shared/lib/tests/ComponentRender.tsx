@@ -22,6 +22,6 @@ export function ComponentRender(component: ReactNode, options: ComponentRenderOp
           {component}
         </I18nextProvider>
       </MemoryRouter>
-    </StoreProvider>
+    </StoreProvider>,
   )
 }

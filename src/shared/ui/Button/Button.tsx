@@ -26,7 +26,7 @@ export const Button: FC<IButtonProps> = ({
 }) => {
   const mods: Record<string, boolean> = {
     [styles.square]: square,
-    [styles.disabled]: disabled
+    [styles.disabled]: disabled,
   }
 
   return (

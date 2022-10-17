@@ -32,9 +32,9 @@ export function webpackLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] 
     use: {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env']
-      }
-    }
+        presets: ['@babel/preset-env'],
+      },
+    },
   }
 
   return [babelLoader, tsLoader, cssLoader, svgLoader, fileLoader]

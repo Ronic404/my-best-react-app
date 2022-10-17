@@ -34,6 +34,7 @@ module.exports = {
     }],
     'react/display-name': 'off',
     'react-hooks/rules-of-hooks': 'error',
+    'comma-dangle': ['error', 'always-multiline'],
     'react-hooks/exhaustive-deps': 'warn'
   }
 }

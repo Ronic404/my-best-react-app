@@ -19,7 +19,7 @@ export function webpackConfig(options: IBuildOptions): webpack.Configuration {
       clean: true,
     },
     module: {
-      rules: webpackLoaders(options)
+      rules: webpackLoaders(options),
     },
     plugins: webpackPlugins(options),
     resolve: webpackResolvers(options),

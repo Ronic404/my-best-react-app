@@ -8,7 +8,7 @@ import { userReducer } from '../../../../entities/User'
 
 export function createReduxStore(
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>
+  asyncReducers?: ReducersMapObject<StateSchema>,
 ): ReturnType<typeof configureStore> {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,

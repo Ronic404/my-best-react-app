@@ -12,41 +12,41 @@ export default {
   },
   args: {
     to: '/',
-    children: 'Link'
-  }
+    children: 'Link',
+  },
 } as ComponentMeta<typeof AppLink>
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  theme: 'primary'
+  theme: 'primary',
 } as IAppLinkProps
 
 export const Secondary = Template.bind({})
 Secondary.args = {
-  theme: 'secondary'
+  theme: 'secondary',
 } as IAppLinkProps
 
 export const Red = Template.bind({})
 Red.args = {
-  theme: 'red'
+  theme: 'red',
 } as IAppLinkProps
 
 export const PrimaryDark = Template.bind({})
 PrimaryDark.args = {
-  theme: 'primary'
+  theme: 'primary',
 } as IAppLinkProps
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const SecondaryDark = Template.bind({})
 SecondaryDark.args = {
-  theme: 'secondary'
+  theme: 'secondary',
 } as IAppLinkProps
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const RedDark = Template.bind({})
 RedDark.args = {
-  theme: 'red'
+  theme: 'red',
 } as IAppLinkProps
 RedDark.decorators = [ThemeDecorator(Theme.DARK)]

@@ -16,7 +16,7 @@ export const AppLink: FC<IAppLinkProps> = ({
   className,
   children,
   to,
-  theme = 'primary'
+  theme = 'primary',
 }) => {
   return (
     <Link className={classNames(styles.appLink, {}, [className, styles[theme]])} to={to}>
