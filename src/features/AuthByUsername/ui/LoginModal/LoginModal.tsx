@@ -1,7 +1,8 @@
-import { FC } from 'react'
+import { FC, Suspense } from 'react'
 
-import { LoginForm } from '../LoginForm/LoginForm'
+import { LoginForm } from '../LoginForm'
 import { Modal } from 'shared/ui/Modal'
+import { Loader } from 'shared/ui/Loader'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 
@@ -21,7 +22,9 @@ export const LoginModal: FC<ILoginModalProps> = ({ className, isOpen, onClose })
       isOpen={isOpen}
       onClose={onClose}
     >
-      <LoginForm />
+      <Suspense fallback={<Loader />}>
+        <LoginForm />
+      </Suspense>
     </Modal>
   )
 }

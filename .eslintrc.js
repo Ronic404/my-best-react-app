@@ -24,9 +24,11 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/naming-convention': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/consistent-type-assertions': 'off',
     '@typescript-eslint/prefer-includes': 'off',
+    '@typescript-eslint/no-dynamic-delete': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-explicit-any': 'warn',
     'i18next/no-literal-string': ['warn', {
       markupOnly: true, onlyAttribute: ['']
     }],
