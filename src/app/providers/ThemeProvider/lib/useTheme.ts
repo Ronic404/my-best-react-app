@@ -11,15 +11,20 @@ export function useTheme(): IUseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext)
 
   useEffect(() => {
-    document.body.className = theme
+    if (theme) {
+      document.body.className = theme
+    }
   }, [theme])
 
   const toggleTheme = (): void => {
     const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK
-    setTheme(newTheme)
+    setTheme?.(newTheme)
     document.body.className = newTheme
     localStorage.setItem(LS_THEME_KEY, newTheme)
   }
 
-  return { theme, toggleTheme }
+  return {
+    theme: theme ?? Theme.LIGHT,
+    toggleTheme,
+  }
 }

@@ -17,14 +17,17 @@ const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />
 
 export const Light = Template.bind({})
 Light.args = {}
+// @ts-expect-error
 Light.decorators = [StoreDecorator({})]
 
 export const Dark = Template.bind({})
 Dark.args = {}
+// @ts-expect-error
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
 
 export const Auth = Template.bind({})
 Auth.args = {}
+// @ts-expect-error
 Auth.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
   user: { authData: {} },
 })]
