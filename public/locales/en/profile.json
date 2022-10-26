@@ -12,5 +12,10 @@
   "currency": "Currency",
   "country": "Country",
   "update": "Try to update page",
+  "errorUserData": "Requred name and lastname",
+  "errorAge": "Incorrect age",
+  "errorCountry": "Incorrect country",
+  "errorNoData": "No data",
+  "errorServer": "Server error",
   "errorLoading": "Occured loading error"
 }
