@@ -20,5 +20,6 @@ export default (env: IWebpackEnv): webpack.Configuration => {
     isDev,
     apiUrl,
     port: env.port || 3000,
+    project: 'frontend',
   })
 }
