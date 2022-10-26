@@ -1,6 +1,16 @@
 {
   "profile": "Profile",
   "edit": "Edit",
+  "cancel": "Cancel",
+  "save": "Save",
   "yourName": "Your name",
-  "yourLastname": "Your lastname"
+  "yourLastname": "Your lastname",
+  "yourAge": "Your age",
+  "yourCity": "Your city",
+  "yourUsername": "Your username",
+  "yourAvatar": "Your avatar link",
+  "currency": "Currency",
+  "country": "Country",
+  "update": "Try to update page",
+  "errorLoading": "Occured loading error"
 }

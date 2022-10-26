@@ -4,7 +4,7 @@ import { classNames, Mods } from 'shared/lib/classNames/classNames'
 
 import styles from './Button.module.scss'
 
-type ButtonTheme = 'clear' | 'outline' | 'background' | 'backgroundInverted' | 'clearInverted'
+type ButtonTheme = 'clear' | 'outline' | 'outline_red' | 'background' | 'backgroundInverted' | 'clearInverted'
 type ButtonSize = 'm' | 'l' | 'xl'
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
