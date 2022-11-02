@@ -1,21 +1,4 @@
 {
-  "profile": "Profile",
-  "edit": "Edit",
-  "cancel": "Cancel",
-  "save": "Save",
-  "yourName": "Your name",
-  "yourLastname": "Your lastname",
-  "yourAge": "Your age",
-  "yourCity": "Your city",
-  "yourUsername": "Your username",
-  "yourAvatar": "Your avatar link",
-  "currency": "Currency",
-  "country": "Country",
-  "update": "Try to update page",
-  "errorUserData": "Requred name and lastname",
-  "errorAge": "Incorrect age",
-  "errorCountry": "Incorrect country",
-  "errorNoData": "No data",
-  "errorServer": "Server error",
-  "errorLoading": "Occured loading error"
+  "articleNotFound": "Article not found",
+  "loadingError": "An error occured while loading article"
 }

@@ -5,6 +5,7 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { CounterSchema } from '../../../../entities/Counter'
 import { UserSchema } from '../../../../entities/User'
 import { ProfileSchema } from '../../../../entities/Profile'
+import { articleDetailsSchema } from '../../../../entities/Article'
 import { LoginSchema } from 'features/AuthByUsername'
 
 export interface StateSchema {
@@ -14,6 +15,7 @@ export interface StateSchema {
   // Асинхронные редюсеры
   loginForm?: LoginSchema
   profile?: ProfileSchema
+  articleDetails?: articleDetailsSchema
 }
 
 export interface ReducerManager {

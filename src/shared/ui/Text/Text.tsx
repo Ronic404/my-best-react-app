@@ -10,14 +10,23 @@ export interface ITextProps {
   text?: string
   theme?: 'primary' | 'error'
   align?: 'left' | 'right' | 'center'
+  size?: 'M' | 'L'
 }
 
 export const Text = memo((props: ITextProps) => {
-  const { className, title, text, theme = 'primary', align = 'left' } = props
+  const {
+    className,
+    title,
+    text,
+    theme = 'primary',
+    align = 'left',
+    size = 'M',
+  } = props
 
   const mods: Mods = {
     [styles[theme]]: true,
     [styles[align]]: true,
+    [styles[size]]: true,
   }
 
   return (
