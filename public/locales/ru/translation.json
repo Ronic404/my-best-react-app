@@ -17,5 +17,6 @@
   "enterUsername": "Введите имя",
   "enterPassword": "Введите пароль",
   "authForm": "Форма авторизации",
+  "noComments": "Комментарии отсутствуют",
   "error": "Ошибка"
 }
