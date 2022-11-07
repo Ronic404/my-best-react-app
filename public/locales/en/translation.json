@@ -16,7 +16,9 @@
   "decrement": "Decrement",
   "enterUsername": "Enter username",
   "enterPassword": "Enter password",
+  "enterComment": "Enter comment",
   "authForm": "Auth form",
   "noComments": "No comments",
+  "send": "Send",
   "error": "Error"
 }

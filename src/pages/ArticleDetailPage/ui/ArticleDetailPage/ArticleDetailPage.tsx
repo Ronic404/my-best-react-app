@@ -1,7 +1,10 @@
-import { FC, memo } from 'react'
+import { FC, memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+
+import { AddCommentForm } from 'features/addCommentForm'
+import { addCommentForArticle } from 'pages/ArticleDetailPage/model/services/addCommentForArticle/addCommentForArticle'
 
 import { CommentList } from '../../../../entities/Comments'
 import { ArticleDetails } from '../../../../entities/Article'
@@ -38,6 +41,10 @@ const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
     dispath(fetchCommentsByArticleId(id))
   })
 
+  const onSendComment = useCallback((text: string) => {
+    dispath(addCommentForArticle(text))
+  }, [dispath])
+
   if (!id) {
     return (
       <div className={classNames(styles.articleDetailPage, {}, [className])}>
@@ -51,6 +58,7 @@ const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
       <div className={classNames(styles.articleDetailPage, {}, [className])}>
         <ArticleDetails id={id} />
         <Text className={styles.commentTitle} title={t('comments')} />
+        <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={commentsIsLoading} />
       </div>
     </DynamicModuleLoader>

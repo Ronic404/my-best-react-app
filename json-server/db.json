@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "HELLO",
+      "id": "YSqqPFi"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "WORLD",
+      "id": "vF3HW4-"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Salam",
+      "id": "cYAJwrM"
     }
   ],
   "users": [
@@ -118,14 +138,28 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
     }
   ],
-  "profile": {
-    "first": "Alex",
-    "lastname": "Chubukov",
-    "age": 33,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Izhevsk",
-    "username": "admin",
-    "avatar": "https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Alex",
+      "lastname": "Chubukov",
+      "age": 33,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Izhevsk",
+      "username": "admin",
+      "avatar": "https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo"
+    },
+    {
+      "id": "2",
+      "first": "Vova",
+      "lastname": "Nikolaev",
+      "age": 36,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Glazov",
+      "username": "user",
+      "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
+    }
+  ]
 }

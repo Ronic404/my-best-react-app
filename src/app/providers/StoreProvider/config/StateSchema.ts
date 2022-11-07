@@ -7,6 +7,7 @@ import { UserSchema } from '../../../../entities/User'
 import { ProfileSchema } from '../../../../entities/Profile'
 import { articleDetailsSchema } from '../../../../entities/Article'
 import { LoginSchema } from 'features/AuthByUsername'
+import { AddCommentFormSchema } from 'features/addCommentForm'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailPage'
 
 export interface StateSchema {
@@ -18,6 +19,7 @@ export interface StateSchema {
   profile?: ProfileSchema
   articleDetails?: articleDetailsSchema
   articleDetailsComments?: ArticleDetailsCommentsSchema
+  addCommentForm?: AddCommentFormSchema
 }
 
 export interface ReducerManager {
