@@ -6,8 +6,7 @@ import { AppLink } from 'shared/ui/AppLink'
 import { classNames } from 'shared/lib/classNames/classNames'
 
 import { getUserAuthData } from '../../../../entities/User'
-
-import { SidebarItemType } from 'widgets/Sidebar/model/items'
+import { SidebarItemType } from '../../model/types/sidebar'
 
 import styles from './SidebarItem.module.scss'
 

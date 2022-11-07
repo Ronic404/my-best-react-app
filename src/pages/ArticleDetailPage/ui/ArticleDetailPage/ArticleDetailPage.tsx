@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { AddCommentForm } from 'features/addCommentForm'
-import { addCommentForArticle } from 'pages/ArticleDetailPage/model/services/addCommentForArticle/addCommentForArticle'
 
 import { CommentList } from '../../../../entities/Comments'
 import { ArticleDetails } from '../../../../entities/Article'
@@ -12,6 +11,7 @@ import { ArticleDetails } from '../../../../entities/Article'
 import { Text } from 'shared/ui/Text'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader'
 
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { fetchCommentsByArticleId } from '../..//model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 import { ArticleDetailsCommentsSliceReducer, getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice'
