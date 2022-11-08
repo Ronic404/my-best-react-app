@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, useLocation } from 'react-router-dom'
 
-import { getUserAuthData } from 'entities/User'
+import { getUserAuthData } from '../../../../entities/User'
 import { RoutePaths } from 'shared/config/routeConfig/routeConfig'
 
 export const RequireAuth: FC = ({ children }: any) => {

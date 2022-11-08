@@ -1,19 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import ArticleDetailPage, { IArticleDetailPageProps } from './ArticleDetailPage'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
-import { Article } from '../../../../entities/Article'
+import { Article } from '../../model/types/article'
+import { ArticleListItem, IArticleListItemProps } from './ArticleListItem'
 
-export default {
-  title: 'pages/ArticleDetailPage',
-  component: ArticleDetailPage,
-  argTypes: {
-  },
-} as ComponentMeta<typeof ArticleDetailPage>
-
-const Template: ComponentStory<typeof ArticleDetailPage> = (args: IArticleDetailPageProps) => <ArticleDetailPage {...args} />
-
-const article: Article = {
+const article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
@@ -23,8 +13,11 @@ const article: Article = {
   user: {
     id: '1',
     username: 'Alex',
+    avatar: 'https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo',
   },
-  type: ['IT'],
+  type: [
+    'IT',
+  ],
   blocks: [
     {
       id: '1',
@@ -85,13 +78,25 @@ const article: Article = {
       ],
     },
   ],
+} as Article
+
+export default {
+  title: 'entities/Article/ArticleListItem',
+  component: ArticleListItem,
+  argTypes: {
+  },
+} as ComponentMeta<typeof ArticleListItem>
+
+const Template: ComponentStory<typeof ArticleListItem> = (args: IArticleListItemProps) => <ArticleListItem {...args} />
+
+export const Big = Template.bind({})
+Big.args = {
+  view: 'big',
+  article,
 }
 
-export const Normal = Template.bind({})
-Normal.args = {}
-// @ts-expect-error
-Normal.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article,
-  },
-})]
+export const Small = Template.bind({})
+Small.args = {
+  view: 'small',
+  article,
+}
