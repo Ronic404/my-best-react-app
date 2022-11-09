@@ -9,6 +9,7 @@ import { articleDetailsSchema } from '../../../../entities/Article'
 import { LoginSchema } from 'features/AuthByUsername'
 import { AddCommentFormSchema } from 'features/addCommentForm'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailPage'
+import { ArticlePageSchema } from 'pages/ArticlesPage'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -20,6 +21,7 @@ export interface StateSchema {
   articleDetails?: articleDetailsSchema
   articleDetailsComments?: ArticleDetailsCommentsSchema
   addCommentForm?: AddCommentFormSchema
+  articlesPage?: ArticlePageSchema
 }
 
 export interface ReducerManager {
