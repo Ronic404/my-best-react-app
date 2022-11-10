@@ -9,6 +9,7 @@ import { CommentList } from '../../../../entities/Comments'
 import { ArticleDetails } from '../../../../entities/Article'
 
 import { Text } from 'shared/ui/Text'
+import { Page } from 'shared/ui/Page'
 import { Button } from 'shared/ui/Button'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader'
 
@@ -54,21 +55,21 @@ const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
 
   if (!id) {
     return (
-      <div className={classNames(styles.articleDetailPage, {}, [className])}>
+      <Page className={classNames(styles.articleDetailPage, {}, [className])}>
         {t('articleNotFound')}
-      </div>
+      </Page>
     )
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(styles.articleDetailPage, {}, [className])}>
+      <Page className={classNames(styles.articleDetailPage, {}, [className])}>
         <Button theme='outline' onClick={onBackToList}>{t('back')}</Button>
         <ArticleDetails id={id} />
         <Text className={styles.commentTitle} title={t('comments')} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList comments={comments} isLoading={commentsIsLoading} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

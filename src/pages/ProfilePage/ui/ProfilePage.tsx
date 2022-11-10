@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 import { Text } from 'shared/ui/Text'
+import { Page } from 'shared/ui/Page'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader'
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
@@ -100,7 +101,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames('', {}, [className])}>
+      <Page className={classNames('', {}, [className])}>
         <ProfilePageHeader />
         {!!validateErrors.length && validateErrors.map(error => (
           <Text theme='error' text={validateErrorTranslates[error]} key={error} />
@@ -119,7 +120,7 @@ const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

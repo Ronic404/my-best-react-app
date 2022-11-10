@@ -12,9 +12,7 @@ export const AppRouter = memo(() => {
         key={route.path}
         path={route.path}
         element={
-          <div className='page-wrapper'>
-            {route.authOnly ? <RequireAuth>{route.element}</RequireAuth> : route.element}
-          </div>
+          route.authOnly ? <RequireAuth>{route.element}</RequireAuth> : route.element
         }
       />
     )
