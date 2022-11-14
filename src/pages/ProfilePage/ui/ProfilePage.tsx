@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 
 import { Text } from 'shared/ui/Text'
-import { Page } from 'shared/ui/Page'
+import { Page } from 'widgets/Page'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader'
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'

@@ -9,7 +9,7 @@ import { CommentList } from '../../../../entities/Comments'
 import { ArticleDetails } from '../../../../entities/Article'
 
 import { Text } from 'shared/ui/Text'
-import { Page } from 'shared/ui/Page'
+import { Page } from 'widgets/Page'
 import { Button } from 'shared/ui/Button'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader'
 

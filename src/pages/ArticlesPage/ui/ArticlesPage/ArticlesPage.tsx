@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 
-import { Page } from 'shared/ui/Page'
+import { Page } from 'widgets/Page'
 import { ArticleList, ArticleViewSelector, ArticleViewType } from '../../../../entities/Article'
 
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
