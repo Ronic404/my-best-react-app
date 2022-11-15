@@ -4,7 +4,7 @@ import ArticlesPage, { IArticlesPageProps } from './ArticlesPage'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 
 export default {
-  title: 'pages/ArticlesPage',
+  title: 'pages/Article/ArticlesPage',
   component: ArticlesPage,
   argTypes: {
   },

@@ -9,7 +9,7 @@ export default {
   },
 } as ComponentMeta<typeof Select>
 
-const Template: ComponentStory<typeof Select> = (args: ISelectProps) => <Select {...args} />
+const Template: ComponentStory<typeof Select> = (args: ISelectProps<string>) => <Select {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {

@@ -3,5 +3,18 @@
   "comments": "Comments",
   "next": "Next...",
   "back": "Back",
+  "by": "by",
+  "sortBy": "Sort by",
+  "search": "Search",
+  "asc": "asc",
+  "desc": "desc",
+  "byCreated": "created",
+  "byTitle": "title",
+  "byViews": "views",
+  "all": "All",
+  "it": "IT",
+  "economics": "Economics",
+  "science": "Science",
+  "notFound": "Articles not found",
   "loadingError": "An error occured while loading article"
 }

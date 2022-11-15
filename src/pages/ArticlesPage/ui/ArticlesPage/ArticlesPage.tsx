@@ -1,13 +1,15 @@
 import { FC, memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
 
 import { Page } from 'widgets/Page'
-import { ArticleList, ArticleViewSelector, ArticleViewType } from '../../../../entities/Article'
+import { ArticleList } from '../../../../entities/Article'
 
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
+import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice'
 import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -26,18 +28,15 @@ const reducers: ReducersList = {
 
 const ArticlesPage: FC<IArticlesPageProps> = ({ className }) => {
   const dispatch = useAppDispatch()
+  const [searchParams] = useSearchParams()
 
   const articles = useSelector(getArticles.selectAll)
   const view = useSelector(getArticlesPageView)
   const isLoading = useSelector(getArticlesPageIsLoading)
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage())
+    dispatch(initArticlesPage(searchParams))
   })
-
-  const onChangeView = useCallback((view: ArticleViewType) => {
-    dispatch(articlesPageActions.setView(view))
-  }, [dispatch])
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage())
@@ -49,8 +48,9 @@ const ArticlesPage: FC<IArticlesPageProps> = ({ className }) => {
         className={classNames(styles.articlesPage, {}, [className])}
         onScrollEnd={onLoadNextPart}
       >
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticlesPageFilters />
         <ArticleList
+          className={styles.list}
           view={view}
           isLoading={isLoading}
           articles={articles}
