@@ -8,8 +8,8 @@ import { articleDetailsSchema } from '../../../../entities/Article'
 import { UISchema } from 'features/UI'
 import { LoginSchema } from 'features/AuthByUsername'
 import { AddCommentFormSchema } from 'features/addCommentForm'
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailPage'
 import { ArticlePageSchema } from 'pages/ArticlesPage'
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailPage'
 
 export type MountedReducers = OptionalRecord<keyof StateSchema, boolean>
 
@@ -21,9 +21,9 @@ export interface StateSchema {
   loginForm?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: articleDetailsSchema
-  articleDetailsComments?: ArticleDetailsCommentsSchema
   addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlePageSchema
+  articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export interface ReducerManager {

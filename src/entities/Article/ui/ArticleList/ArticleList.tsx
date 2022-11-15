@@ -1,4 +1,4 @@
-import { memo, ReactNode } from 'react'
+import { HTMLAttributeAnchorTarget, memo, ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Text } from 'shared/ui/Text'
@@ -15,6 +15,7 @@ export interface IArticleListProps {
   articles: Article[]
   isLoading?: boolean
   view?: ArticleViewType
+  target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleViewType): ReactNode => {
@@ -31,6 +32,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
     articles,
     isLoading,
     view = 'small',
+    target,
   } = props
   const { t } = useTranslation('article')
 
@@ -40,6 +42,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
         className={styles.card}
         article={article}
         view={view}
+        target={target}
         key={article.id}
       />
     )

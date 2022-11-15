@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { HTMLAttributeAnchorTarget, memo } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -10,6 +10,7 @@ type AppLinkTheme = 'primary' | 'secondary' | 'red'
 export interface IAppLinkProps extends LinkProps {
   className?: string
   theme?: AppLinkTheme
+  target?: HTMLAttributeAnchorTarget
 }
 
 export const AppLink = memo(({
@@ -17,9 +18,14 @@ export const AppLink = memo(({
   children,
   to,
   theme = 'primary',
+  target,
 }: IAppLinkProps) => {
   return (
-    <Link className={classNames(styles.appLink, {}, [className, styles[theme]])} to={to}>
+    <Link
+      className={classNames(styles.appLink, {}, [className, styles[theme]])}
+      to={to}
+      target={target}
+    >
       {children}
     </Link>
   )
