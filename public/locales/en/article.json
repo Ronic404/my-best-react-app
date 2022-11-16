@@ -4,6 +4,7 @@
   "comments": "Comments",
   "next": "Next...",
   "back": "Back",
+  "edit": "Edit",
   "by": "by",
   "sortBy": "Sort by",
   "search": "Search",
@@ -17,5 +18,7 @@
   "economics": "Economics",
   "science": "Science",
   "notFound": "Articles not found",
+  "editArticleWithId": "Edit article with ID",
+  "createArticle": "Create new article",
   "loadingError": "An error occured while loading article"
 }

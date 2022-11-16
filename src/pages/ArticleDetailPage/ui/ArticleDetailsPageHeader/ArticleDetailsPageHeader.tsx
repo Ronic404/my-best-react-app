@@ -1,0 +1,52 @@
+import { memo, useCallback } from 'react'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+
+import { Button } from 'shared/ui/Button'
+
+import { getCanEditArticle } from '../../model/selectors/article'
+import { getArticleDetailsData } from '../../../../entities/Article'
+
+import { classNames } from 'shared/lib/classNames/classNames'
+import { RoutePaths } from 'shared/config/routeConfig/routeConfig'
+
+import styles from './ArticleDetailsPageHeader.module.scss'
+
+export interface IArticleDetailsPageHeaderProps {
+  className?: string
+}
+
+export const ArticleDetailsPageHeader = memo(({ className }: IArticleDetailsPageHeaderProps) => {
+  const { t } = useTranslation('article')
+  const navigate = useNavigate()
+
+  const article = useSelector(getArticleDetailsData)
+  const canEdit = useSelector(getCanEditArticle)
+
+  const onBackToList = useCallback(() => {
+    navigate(RoutePaths.ARTICLES)
+  }, [navigate])
+
+  const onEditArticle = useCallback(() => {
+    if (article?.id) {
+      navigate(`${RoutePaths.ARTICLE_DETAILS}${article.id}/edit`)
+    }
+  }, [article, navigate])
+
+  return (
+    <div className={classNames(styles.articleDetailsPageHeader, {}, [className])}>
+      <Button
+        theme='outline'
+        onClick={onBackToList}
+      >{t('back')}</Button>
+      {canEdit &&
+        <Button
+          className={styles.editBtn}
+          theme='outline'
+          onClick={onEditArticle}
+        >{t('edit')}</Button>
+      }
+    </div>
+  )
+})

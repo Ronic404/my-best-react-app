@@ -8,7 +8,7 @@ export interface ITextProps {
   className?: string
   title?: string
   text?: string
-  theme?: 'primary' | 'error'
+  theme?: 'primary' | 'error' | 'inverted'
   align?: 'left' | 'right' | 'center'
   size?: 'M' | 'L'
 }

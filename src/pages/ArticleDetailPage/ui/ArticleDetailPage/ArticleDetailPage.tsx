@@ -1,16 +1,16 @@
 import { FC, memo, useCallback } from 'react'
+import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import { useNavigate, useParams } from 'react-router-dom'
 
 import { AddCommentForm } from 'features/addCommentForm'
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 import { CommentList } from '../../../../entities/Comments'
 import { ArticleDetails, ArticleList } from '../../../../entities/Article'
 
 import { Text } from 'shared/ui/Text'
 import { Page } from 'widgets/Page'
-import { Button } from 'shared/ui/Button'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader'
 
 import { getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice'
@@ -25,7 +25,6 @@ import { getArticleRecommendationsIsLoading } from '../../model/selectors/recomm
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { RoutePaths } from 'shared/config/routeConfig/routeConfig'
 
 import styles from './ArticleDetailPage.module.scss'
 
@@ -41,7 +40,7 @@ const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
   const dispath = useAppDispatch()
   const { t } = useTranslation('article')
   const { id } = useParams<{ id: string }>()
-  const navigate = useNavigate()
+
   const comments = useSelector(getArticleComments.selectAll)
   const recommendations = useSelector(getArticleRecommendations.selectAll)
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
@@ -51,10 +50,6 @@ const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
     dispath(fetchCommentsByArticleId(id))
     dispath(fetchArticleRecommendations())
   })
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePaths.ARTICLES)
-  }, [navigate])
 
   const onSendComment = useCallback((text: string) => {
     dispath(addCommentForArticle(text))
@@ -71,7 +66,7 @@ const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(styles.articleDetailPage, {}, [className])}>
-        <Button theme='outline' onClick={onBackToList}>{t('back')}</Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text
           className={styles.recommendationTitle}

@@ -1,4 +1,5 @@
 {
+  "myApp": "My app",
   "language": "English",
   "shortLang": "En",
   "main": "Main",
@@ -20,5 +21,6 @@
   "authForm": "Auth form",
   "noComments": "No comments",
   "send": "Send",
+  "createArticle": "Create article",
   "error": "Error"
 }
