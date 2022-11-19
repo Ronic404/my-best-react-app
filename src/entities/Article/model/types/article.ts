@@ -1,4 +1,4 @@
-import { User } from 'entities/User'
+import { User } from '../../../../entities/User'
 
 export type ArticleBlockType = 'CODE' | 'IMAGE' | 'TEXT'
 export type ArticleSortField = 'views' | 'title' | 'created'

@@ -10,6 +10,8 @@ export default ({ config }: { config: Configuration }): Configuration => {
     html: '',
     entry: '',
     src: path.resolve(__dirname, '../../src'),
+    locales: path.resolve(__dirname, '../../public/locales'),
+    buildLocales: path.resolve(__dirname, '../../dist/locales'),
   }
 
   config.resolve?.modules?.push(paths.src, 'node_modules')
