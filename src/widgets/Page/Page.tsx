@@ -19,6 +19,8 @@ export interface IPageProps {
   onScrollEnd?: () => void
 }
 
+export const PAGE_ID = 'PAGE_ID'
+
 export const Page = memo(({ className, children, onScrollEnd }: IPageProps) => {
   const location = useLocation()
   const dispatch = useAppDispatch()
@@ -48,6 +50,7 @@ export const Page = memo(({ className, children, onScrollEnd }: IPageProps) => {
       className={classNames(styles.page, {}, [className])}
       ref={wrapperRef}
       onScroll={onScroll}
+      id={PAGE_ID}
     >
       {children}
       {onScrollEnd &&
