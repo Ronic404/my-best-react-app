@@ -1,6 +1,7 @@
 import { memo } from 'react'
 
 import { Text } from 'shared/ui/Text'
+import { VStack } from 'shared/ui/Stack'
 import { Avatar } from 'shared/ui/Avatar'
 import { AppLink } from 'shared/ui/AppLink'
 import { Skeleton } from 'shared/ui/Skeleton'
@@ -36,7 +37,7 @@ export const CommentCard = memo(({ className, comment, isLoading }: ICommentCard
   }
 
   return (
-    <div className={classNames(styles.commentCard, {}, [className])}>
+    <VStack className={classNames(styles.commentCard, {}, [className])} gap='8' max>
       <AppLink className={styles.header} to={`${RoutePaths.PROFILE}${comment.user.id}`}>
         {comment.user.avatar &&
           <Avatar src={comment.user.avatar} size={30} />
@@ -44,6 +45,6 @@ export const CommentCard = memo(({ className, comment, isLoading }: ICommentCard
         <Text className={styles.username} title={comment.user.username} />
       </AppLink>
       <Text className={styles.text} text={comment.text} />
-    </div>
+    </VStack>
   )
 })

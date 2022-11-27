@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
+import { HStack } from 'shared/ui/Stack'
 import { Button } from 'shared/ui/Button'
 
 import { getCanEditArticle } from '../../model/selectors/article'
@@ -10,8 +11,6 @@ import { getArticleDetailsData } from '../../../../entities/Article'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 import { RoutePaths } from 'shared/config/routeConfig/routeConfig'
-
-import styles from './ArticleDetailsPageHeader.module.scss'
 
 export interface IArticleDetailsPageHeaderProps {
   className?: string
@@ -35,18 +34,11 @@ export const ArticleDetailsPageHeader = memo(({ className }: IArticleDetailsPage
   }, [article, navigate])
 
   return (
-    <div className={classNames(styles.articleDetailsPageHeader, {}, [className])}>
-      <Button
-        theme='outline'
-        onClick={onBackToList}
-      >{t('back')}</Button>
+    <HStack className={classNames('', {}, [className])} justify='between' max>
+      <Button theme='outline' onClick={onBackToList}>{t('back')}</Button>
       {canEdit &&
-        <Button
-          className={styles.editBtn}
-          theme='outline'
-          onClick={onEditArticle}
-        >{t('edit')}</Button>
+        <Button theme='outline' onClick={onEditArticle}>{t('edit')}</Button>
       }
-    </div>
+    </HStack>
   )
 })

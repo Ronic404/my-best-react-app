@@ -3,10 +3,11 @@ import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import { Input } from 'shared/ui/Input'
+import { HStack } from 'shared/ui/Stack'
 import { Button } from 'shared/ui/Button'
 
+import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice'
-import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -26,7 +27,6 @@ const reducers: ReducersList = {
 const AddCommentForm = memo(({ className, onSendComment }: IAddCommentFormProps) => {
   const { t } = useTranslation()
   const text = useSelector(getAddCommentFormText)
-  const error = useSelector(getAddCommentFormError)
   const dispatch = useAppDispatch()
 
   const onCommentTextChange = useCallback((value: string) => {
@@ -40,7 +40,11 @@ const AddCommentForm = memo(({ className, onSendComment }: IAddCommentFormProps)
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(styles.addCommentForm, {}, [className])}>
+      <HStack
+        className={classNames(styles.addCommentForm, {}, [className])}
+        justify='between'
+        max
+      >
         <Input
           className={styles.input}
           value={text}
@@ -48,7 +52,7 @@ const AddCommentForm = memo(({ className, onSendComment }: IAddCommentFormProps)
           onChange={onCommentTextChange}
         />
         <Button theme='outline' onClick={onSendHandler}>{t('send')}</Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   )
 })
