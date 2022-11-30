@@ -3,8 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Text } from 'shared/ui/Text'
+import { Avatar } from 'shared/ui/Avatar'
 import { Button } from 'shared/ui/Button'
 import { AppLink } from 'shared/ui/AppLink'
+import { Dropdown } from 'shared/ui/Dropdown'
 
 import { LoginModal } from 'features/AuthByUsername'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -52,13 +54,21 @@ export const Navbar = memo(({ className }: INavbarProps) => {
         >
           {t('createArticle')}
         </AppLink>
-        <Button
-          className={classNames(styles.button)}
-          theme='clearInverted'
-          onClick={onLogout}
-        >
-          {t('logOut')}
-        </Button>
+        <Dropdown
+          className={classNames(styles.dropdown)}
+          items={[
+            {
+              content: t('profile'),
+              href: RoutePaths.PROFILE + authData.id,
+            },
+            {
+              content: t('logOut'),
+              onClick: onLogout,
+            },
+          ]}
+          direction='bottom left'
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
       </header>
     )
   }

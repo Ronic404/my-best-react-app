@@ -39,7 +39,7 @@ export const CountrySelect = memo((props: ICountrySelectProps) => {
       value={value}
       defaultValue={t('country')}
       readOnly={readOnly}
-      direction='top'
+      direction='top right'
       onChange={onChangeHandler}
     />
   )
