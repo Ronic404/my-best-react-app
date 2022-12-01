@@ -5,7 +5,7 @@ import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicM
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'
 
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
-import { profileReducer } from '../../../entities/Profile'
+import { profileReducer } from 'features/editableProfileCard/model/slice/profileSlice'
 import { articlesPageReducer } from 'pages/ArticlesPage/model/slices/articlesPageSlice'
 import { addCommentFormReducer } from 'features/addCommentForm/model/slices/addCommentFormSlice'
 import { articleDetailsReducer } from '../../../entities/Article/model/slice/articleDetailsSlice'

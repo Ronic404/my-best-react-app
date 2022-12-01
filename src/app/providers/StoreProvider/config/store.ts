@@ -8,6 +8,7 @@ import { userReducer } from '../../../../entities/User'
 import { uiReducer } from 'features/UI'
 
 import { $api } from 'shared/api/api'
+import { rtkApi } from 'shared/api/rtkApi'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function createReduxStore(
@@ -19,6 +20,7 @@ export function createReduxStore(
     counter: counterReducer,
     user: userReducer,
     ui: uiReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   }
 
   const reducerManager = createReducerManager(rootReducers)
@@ -35,7 +37,7 @@ export function createReduxStore(
       thunk: {
         extraArgument: extraArg,
       },
-    }),
+    }).concat(rtkApi.middleware),
   })
 
   // @ts-expect-error

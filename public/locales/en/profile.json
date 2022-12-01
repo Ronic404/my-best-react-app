@@ -17,5 +17,6 @@
   "errorCountry": "Incorrect country",
   "errorNoData": "No data",
   "errorServer": "Server error",
-  "errorLoading": "Occured loading error"
+  "errorLoading": "Occured loading error",
+  "errorProfile": "Profile has not been found"
 }

@@ -5,7 +5,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 import { Article } from '../../../../entities/Article'
 
 export default {
-  title: 'pages/ArticleDetailPage',
+  title: 'pages/ArticleDetailsPage/ArticleDetailPage',
   component: ArticleDetailPage,
   argTypes: {
   },
