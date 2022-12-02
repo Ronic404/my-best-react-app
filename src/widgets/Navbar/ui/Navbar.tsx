@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,7 +11,7 @@ import { Dropdown } from 'shared/ui/Dropdown'
 
 import { LoginModal } from 'features/AuthByUsername'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { getUserAuthData, userActions } from '../../../entities/User'
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '../../../entities/User'
 
 import { RoutePaths } from 'shared/config/routeConfig/routeConfig'
 
@@ -23,8 +24,12 @@ interface INavbarProps {
 export const Navbar = memo(({ className }: INavbarProps) => {
   const { t } = useTranslation()
   const dispatch = useDispatch()
-  const authData = useSelector(getUserAuthData)
 
+  const isAdmin = useSelector(isUserAdmin)
+  const authData = useSelector(getUserAuthData)
+  const isManager = useSelector(isUserManager)
+
+  const isAdminPanelAvailable = isAdmin || isManager
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false)
 
   const onCloseModal = useCallback(() => {
@@ -57,6 +62,13 @@ export const Navbar = memo(({ className }: INavbarProps) => {
         <Dropdown
           className={classNames(styles.dropdown)}
           items={[
+            ...(isAdminPanelAvailable
+              ? [{
+                  content: t('admin'),
+                  href: RoutePaths.ADMIN_PANEL,
+                }]
+              : []
+            ),
             {
               content: t('profile'),
               href: RoutePaths.PROFILE + authData.id,

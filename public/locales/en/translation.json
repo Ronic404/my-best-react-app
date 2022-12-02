@@ -23,5 +23,8 @@
   "send": "Send",
   "createArticle": "Create article",
   "chooseValue": "Choose value",
-  "error": "Error"
+  "error": "Error",
+  "admin": "Admin",
+  "adminPanel": "Admin panel",
+  "forbidden": "Forbidden"
 }
