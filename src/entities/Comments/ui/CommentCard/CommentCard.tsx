@@ -22,13 +22,13 @@ export interface ICommentCardProps {
 export const CommentCard = memo(({ className, comment, isLoading }: ICommentCardProps) => {
   if (isLoading) {
     return (
-      <div className={classNames(styles.commentCard, {}, [className, styles.loading])}>
+      <VStack className={classNames(styles.commentCard, {}, [className, styles.loading])} gap='8' max>
         <div className={styles.header}>
           <Skeleton width={30} height={30} border='50%' />
           <Skeleton className={styles.username} width={150} height={16} />
         </div>
         <Skeleton className={styles.text} width='100%' height={50} />
-      </div>
+      </VStack>
     )
   }
 
