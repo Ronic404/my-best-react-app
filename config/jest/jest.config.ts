@@ -1,8 +1,3 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/en/configuration.html
- */
-
 export default {
   clearMocks: true,
   testEnvironment: 'jest-environment-jsdom',
@@ -32,4 +27,13 @@ export default {
     __API__: '',
     __PROJECT__: 'jest',
   },
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      openReport: true,
+      inlineSource: true,
+    }],
+  ],
 }
