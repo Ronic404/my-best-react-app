@@ -17,7 +17,5 @@ export const Normal = Template.bind({})
 Normal.args = {
   onSendComment: action('onSendComment'),
 }
-Normal.decorators = [
-  // @ts-expect-error
-  StoreDecorator({}),
-]
+// @ts-expect-error
+Normal.decorators = [StoreDecorator({})]

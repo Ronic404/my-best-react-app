@@ -10,7 +10,7 @@ import AdminPanelPage from 'pages/AdminPanelPage'
 import ArticleEditPage from 'pages/ArticleEditPage'
 import ArticleDetailPage from 'pages/ArticleDetailPage'
 
-import { UserRole } from 'entities/User/model/types/user'
+import { UserRole } from '../../../entities/User/model/types/user'
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean

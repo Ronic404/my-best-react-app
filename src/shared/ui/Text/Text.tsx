@@ -9,8 +9,8 @@ type HeaderTagType = 'h1' | 'h2' | 'h3'
 
 export interface ITextProps {
   className?: string
-  title?: string
-  text?: string
+  title?: string | null
+  text?: string | null
   theme?: 'primary' | 'error' | 'inverted'
   align?: 'left' | 'right' | 'center'
   size?: TextSize

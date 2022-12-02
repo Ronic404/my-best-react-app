@@ -1,4 +1,4 @@
-import { FC, Fragment, ReactNode } from 'react'
+import { FC, Fragment, ReactElement, ReactNode } from 'react'
 import { Menu } from '@headlessui/react'
 
 import { AppLink } from '../AppLink'
@@ -42,7 +42,7 @@ export const Dropdown: FC<DropdownProps> = (props) => {
 
       <Menu.Items className={classNames(styles.menu, {}, menuClasses)}>
         {items.map((item, index) => {
-          const content = ({ active }: { active: boolean }): ReactNode => (
+          const content = ({ active }: { active: boolean }): ReactElement => (
             <button
               className={classNames(styles.item, { [styles.active]: active }, [])}
               type='button'

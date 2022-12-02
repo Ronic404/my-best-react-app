@@ -1,6 +1,5 @@
 import { FC, memo } from 'react'
 import { useParams } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 
 import { ArticleDetails } from '../../../../entities/Article'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
@@ -26,16 +25,7 @@ const reducers: ReducersList = {
 }
 
 const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
-  const { t } = useTranslation('article')
   const { id } = useParams<{ id: string }>()
-
-  if (!id) {
-    return (
-      <Page className={classNames(styles.articleDetailPage, {}, [className])}>
-        {t('articleNotFound')}
-      </Page>
-    )
-  }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

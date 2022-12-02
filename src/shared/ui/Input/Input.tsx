@@ -4,10 +4,11 @@ import { classNames, Mods } from 'shared/lib/classNames/classNames'
 
 import styles from './Input.module.scss'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'placeholder'>
 
 export interface IInputProps extends HTMLInputProps {
   className?: string
+  placeholder?: string | null
   onChange?: (value: string) => void
 }
 

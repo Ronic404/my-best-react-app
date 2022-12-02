@@ -18,9 +18,9 @@ interface ListBoxItem {
 interface ListBoxProps {
   className?: string
   items?: ListBoxItem[]
-  label?: string
+  label?: string | null
   value?: string
-  defaultValue?: string
+  defaultValue?: string | null
   readOnly?: boolean
   direction?: DropdownDirection
   onChange: (value: string) => void

@@ -11,7 +11,7 @@ export interface SelectOption<T extends string> {
 
 export interface ISelectProps<T extends string> {
   className?: string
-  label?: string
+  label?: string | null
   options?: Array<SelectOption<T>>
   value?: T
   readOnly?: boolean

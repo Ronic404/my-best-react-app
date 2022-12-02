@@ -1,9 +1,10 @@
-import { memo, useCallback } from 'react'
+import { memo, Suspense, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import { Text } from 'shared/ui/Text'
 import { VStack } from 'shared/ui/Stack'
+import { Loader } from 'shared/ui/Loader'
 import { CommentList } from '../../../../entities/Comments'
 import { AddCommentForm } from 'features/addCommentForm'
 
@@ -18,7 +19,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 
 export interface IArticleDetailsCommentsProps {
   className?: string
-  id: string
+  id?: string
 }
 
 export const ArticleDetailsComments = memo(({ className, id }: IArticleDetailsCommentsProps) => {
@@ -41,7 +42,11 @@ export const ArticleDetailsComments = memo(({ className, id }: IArticleDetailsCo
         title={t('comments')}
         size='L'
       />
-      <AddCommentForm onSendComment={onSendComment} />
+
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
+
       <CommentList
         comments={comments}
         isLoading={commentsIsLoading}

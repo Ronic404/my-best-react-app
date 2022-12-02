@@ -78,13 +78,16 @@ export const ArticleList = memo((props: IArticleListProps) => {
   }
 
   return (
+    // @ts-expect-error
     <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
       {({ height, width, registerChild, onChildScroll, isScrolling, scrollTop }) => (
         <div
           className={classNames(styles.articleList, {}, [className, styles[view]])}
+          // @ts-expect-error
           ref={registerChild}
         >
           {virtualized &&
+            // @ts-expect-error
             <List
               height={height ?? 700}
               rowCount={rowCount}

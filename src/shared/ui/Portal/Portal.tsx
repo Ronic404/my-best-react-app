@@ -1,7 +1,8 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
 interface IPortalProps {
+  children: ReactNode
   element?: HTMLElement
 }
 

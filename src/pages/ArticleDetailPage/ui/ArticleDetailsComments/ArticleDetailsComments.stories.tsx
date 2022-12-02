@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof ArticleDetailsComments> = (args: IArticleD
 
 export const Normal = Template.bind({})
 Normal.args = {
+  id: '1',
 }
 // @ts-expect-error
 Normal.decorators = [StoreDecorator({})]
