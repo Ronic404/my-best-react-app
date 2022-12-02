@@ -14,6 +14,7 @@ export interface ITextProps {
   theme?: 'primary' | 'error' | 'inverted'
   align?: 'left' | 'right' | 'center'
   size?: TextSize
+  'data-testid'?: string
 }
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
@@ -30,6 +31,7 @@ export const Text = memo((props: ITextProps) => {
     theme = 'primary',
     align = 'left',
     size = 'M',
+    'data-testid': dataTestId = 'Text',
   } = props
 
   const HeaderTag = mapSizeToHeaderTag[size]
@@ -43,10 +45,16 @@ export const Text = memo((props: ITextProps) => {
   return (
     <div className={classNames(styles.text, mods, [className])}>
       {title &&
-        <HeaderTag className={styles.title}>{title}</HeaderTag>
+        <HeaderTag
+          className={styles.title}
+          data-testid={`${dataTestId}.Header`}
+        >{title}</HeaderTag>
       }
       {text &&
-        <p className={styles.text}>{text}</p>
+        <p
+          className={styles.text}
+          data-testid={`${dataTestId}.Paragraph`}
+        >{text}</p>
       }
     </div>
   )

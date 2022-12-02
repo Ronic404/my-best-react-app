@@ -100,7 +100,12 @@ export const EditableProfileCard = memo(({ className, id }: IEditableProfileCard
         <EditableProfileCardHeader />
 
         {!!validateErrors.length && validateErrors.map(error => (
-          <Text theme='error' text={validateErrorTranslates[error]} key={error} />
+          <Text
+            theme='error'
+            text={validateErrorTranslates[error]}
+            key={error}
+            data-testid='EditableProfileCard.Error'
+          />
         ))}
 
         <ProfileCard

@@ -81,6 +81,7 @@ export const ProfileCard: FC<IProfileCardProps> = ({
         placeholder={t('yourName')}
         onChange={onChangeFirstname}
         readOnly={readOnly}
+        data-testid='ProfileCard.firstname'
       />
       <Input
         className={styles.input}
@@ -88,6 +89,7 @@ export const ProfileCard: FC<IProfileCardProps> = ({
         placeholder={t('yourLastname')}
         onChange={onChangeLastname}
         readOnly={readOnly}
+        data-testid='ProfileCard.lastname'
       />
       <Input
         className={styles.input}
