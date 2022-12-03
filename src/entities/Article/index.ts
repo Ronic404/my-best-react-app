@@ -4,7 +4,8 @@ export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
 
-export { ArticleViewType } from './model/types/article'
-export { articleDetailsSchema } from './model/types/articleDetailsSchema'
 export { getArticleDetailsData } from './model/selectors/articleDetails'
-export { Article, ArticleSortField, ArticleType } from './model/types/article'
+
+export type { ArticleViewType } from './model/types/article'
+export type { articleDetailsSchema } from './model/types/articleDetailsSchema'
+export type { Article, ArticleBlockType, ArticleSortField, ArticleType } from './model/types/article'

@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider'
 
-import { ValidateProfileError } from '../../types/editableProfileCardSchema'
+import { ValidateProfileError } from '../../consts/consts'
 
 export const getProfileValidateErrors = (state: StateSchema): ValidateProfileError[] => state.profile?.validateErrors ?? []

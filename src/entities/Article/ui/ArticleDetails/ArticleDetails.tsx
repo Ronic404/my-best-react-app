@@ -18,7 +18,7 @@ import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader'
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
-import { ArticleBlock } from '../..//model/types/article'
+import { ArticleBlock } from '../../model/types/article'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { fetchArticleById } from '../..//model/services/fetchArticleById/fetchArticleById'
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails'

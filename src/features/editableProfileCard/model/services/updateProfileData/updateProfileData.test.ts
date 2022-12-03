@@ -4,7 +4,7 @@ import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 
 import { TestAsuncThunk } from 'shared/lib/tests/TestAsyncThunk'
-import { ValidateProfileError } from '../../types/editableProfileCardSchema'
+import { ValidateProfileError } from '../../consts/consts'
 
 const data = {
   id: '1',

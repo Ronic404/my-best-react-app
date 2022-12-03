@@ -15,7 +15,7 @@ import { getProfileError } from '../../model/selectors/getProfileError/getProfil
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading'
-import { ValidateProfileError } from '../../model/types/editableProfileCardSchema'
+import { ValidateProfileError } from '../../model/consts/consts'
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 
@@ -43,7 +43,7 @@ export const EditableProfileCard = memo(({ className, id }: IEditableProfileCard
   const isLoading = useSelector(getProfileIsLoading)
   const validateErrors = useSelector(getProfileValidateErrors)
 
-  const validateErrorTranslates = {
+  const validateErrorTranslates: Record<string, string> = {
     [ValidateProfileError.INCORRECT_USER_DATA]: t('errorUserData'),
     [ValidateProfileError.INCORRECT_AGE]: t('errorAge'),
     [ValidateProfileError.INCORRECT_COUNTRY]: t('errorCountry'),
