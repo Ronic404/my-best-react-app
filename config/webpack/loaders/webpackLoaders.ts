@@ -2,13 +2,13 @@ import webpack from 'webpack'
 
 import { IBuildOptions } from '../types/config'
 import { buildCssLoader } from './buildCssLoader'
+import { buildBabelLoader } from './buildBabelLoader'
 
-export function webpackLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
-  const tsLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  }
+export function webpackLoaders(options: IBuildOptions): webpack.RuleSetRule[] {
+  const { isDev } = options
+
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false })
+  const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true })
 
   const cssLoader = buildCssLoader(isDev)
 
@@ -26,17 +26,5 @@ export function webpackLoaders({ isDev }: IBuildOptions): webpack.RuleSetRule[] 
     },
   }
 
-  const babelLoader = {
-    test: /\.tsx?$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
-      },
-    },
-  }
-
-  return [babelLoader, tsLoader, cssLoader, svgLoader, fileLoader]
+  return [codeBabelLoader, tsxCodeBabelLoader, cssLoader, svgLoader, fileLoader]
 }
