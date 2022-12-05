@@ -1,6 +1,6 @@
 import { FC, MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 
-import { Portal } from 'shared/ui/Portal'
+import { Portal } from '../Portal'
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 
 import styles from './Modal.module.scss'

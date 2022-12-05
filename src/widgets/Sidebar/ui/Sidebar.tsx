@@ -5,7 +5,7 @@ import { Button } from 'shared/ui/Button'
 import { VStack } from 'shared/ui/Stack/VStack'
 import { SidebarItem } from './SidebarItem/SidebarItem'
 import { LangSwitcher } from 'shared/ui/LangSwitcher'
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 
 import { getSidebarItems } from '../model/selectors/getSidebarItems'
 

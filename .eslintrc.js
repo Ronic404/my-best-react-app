@@ -22,7 +22,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react', 'i18next', 'react-hooks'],
+  plugins: ['react', 'i18next', 'react-hooks', 'ronic-plugin'],
   rules: {
     indent: ['error', 2],
     '@typescript-eslint/comma-dangle': 'off',
@@ -44,5 +44,6 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'comma-dangle': ['error', 'always-multiline'],
     'react-hooks/exhaustive-deps': 'warn',
+    'ronic-plugin/path-checker': 'error',
   },
 }
