@@ -1,17 +1,18 @@
-/* eslint-disable indent */
 import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import { Text } from 'shared/ui/Text'
-import { Avatar } from 'shared/ui/Avatar'
+import { HStack } from 'shared/ui/Stack'
 import { Button } from 'shared/ui/Button'
 import { AppLink } from 'shared/ui/AppLink'
-import { Dropdown } from 'shared/ui/Dropdown'
+
+import { AvatarDropdown } from 'features/avatarDropdown'
+import { NotificationButton } from 'features/notificationButton'
 
 import { LoginModal } from 'features/AuthByUsername'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '../../../entities/User'
+import { getUserAuthData } from '../../../entities/User'
 
 import { RoutePaths } from 'shared/config/routeConfig/routeConfig'
 
@@ -23,13 +24,7 @@ interface INavbarProps {
 
 export const Navbar = memo(({ className }: INavbarProps) => {
   const { t } = useTranslation()
-  const dispatch = useDispatch()
-
-  const isAdmin = useSelector(isUserAdmin)
   const authData = useSelector(getUserAuthData)
-  const isManager = useSelector(isUserManager)
-
-  const isAdminPanelAvailable = isAdmin || isManager
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false)
 
   const onCloseModal = useCallback(() => {
@@ -40,10 +35,6 @@ export const Navbar = memo(({ className }: INavbarProps) => {
     setIsAuthModal(true)
   }, [])
 
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout())
-  }, [dispatch])
-
   if (authData) {
     return (
       <header className={classNames(styles.navbar, {}, [className])}>
@@ -52,6 +43,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
           title={t('myApp')}
           theme='inverted'
         />
+
         <AppLink
           className={styles.createBtn}
           to={RoutePaths.ARTICLE_CREATE}
@@ -59,28 +51,11 @@ export const Navbar = memo(({ className }: INavbarProps) => {
         >
           {t('createArticle')}
         </AppLink>
-        <Dropdown
-          className={classNames(styles.dropdown)}
-          items={[
-            ...(isAdminPanelAvailable
-              ? [{
-                  content: t('admin'),
-                  href: RoutePaths.ADMIN_PANEL,
-                }]
-              : []
-            ),
-            {
-              content: t('profile'),
-              href: RoutePaths.PROFILE + authData.id,
-            },
-            {
-              content: t('logOut'),
-              onClick: onLogout,
-            },
-          ]}
-          direction='bottom left'
-          trigger={<Avatar size={30} src={authData.avatar} />}
-        />
+
+        <HStack className={styles.actions} gap='16'>
+          <NotificationButton />
+          <AvatarDropdown />
+        </HStack>
       </header>
     )
   }
