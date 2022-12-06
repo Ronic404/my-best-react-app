@@ -1,6 +1,9 @@
-import { FC, MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 
 import { Portal } from '../Portal'
+import { Overlay } from '../Overlay'
+
+import { useTheme } from 'app/providers/ThemeProvider'
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 
 import styles from './Modal.module.scss'
@@ -19,6 +22,7 @@ export const Modal: FC<IModalProps> = ({ className, children, isOpen, lazy, onCl
   const [isClosing, setIsClosing] = useState<boolean>(false)
   const [isMounted, setIsMounted] = useState<boolean>(false)
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
+  const { theme } = useTheme()
 
   const mods: Mods = {
     [styles.opened]: isOpen,
@@ -55,22 +59,16 @@ export const Modal: FC<IModalProps> = ({ className, children, isOpen, lazy, onCl
     }
   }, [isOpen, handleKeydownEscape])
 
-  const handleClickContent = (event: MouseEvent<HTMLDivElement>): void => {
-    event.stopPropagation()
-  }
-
   if (lazy && !isMounted) {
     return null
   }
 
   return (
     <Portal>
-      <div className={classNames(styles.modal, mods, [className])}>
-        <div className={classNames(styles.overlay)} onClick={closeModal}>
-          <div className={classNames(styles.content)} onClick={handleClickContent}>
-            {children}
-          </div>
-        </div>
+      <div className={classNames(styles.modal, mods, [className, theme, 'app_modal'])}>
+        <Overlay onClick={closeModal}>
+          <div className={styles.content}>{children}</div>
+        </Overlay>
       </div>
     </Portal>
   )
