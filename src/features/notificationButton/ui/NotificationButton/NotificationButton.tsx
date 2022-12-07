@@ -9,6 +9,7 @@ import { Popover } from 'shared/ui/Popups'
 import { NotificationList } from '../../../../entities/Notification'
 
 import { classNames } from 'shared/lib/classNames/classNames'
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider'
 
 import NotificationIcon from 'shared/assets/icons/notification-20-20.svg'
 
@@ -50,9 +51,11 @@ export const NotificationButton = memo((props: INotificationButtonProps) => {
 
       <MobileView>
         {trigger}
-        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-          <NotificationList />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+            <NotificationList />
+          </Drawer>
+        </AnimationProvider>
       </MobileView>
     </div>
   )
