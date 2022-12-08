@@ -4,7 +4,7 @@ import { Navigate, useLocation } from 'react-router-dom'
 
 import { getUserAuthData, getUserRoles, UserRole } from '../../../../entities/User'
 
-import { RoutePaths } from 'shared/config/routeConfig/routeConfig'
+import { RoutePaths } from '@/shared/config/routeConfig/routeConfig'
 
 interface IRequireAuthProps {
   children: any

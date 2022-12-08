@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import ArticleDetailPage, { IArticleDetailPageProps } from './ArticleDetailPage'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { Article } from '../../../../entities/Article'
 
 export default {

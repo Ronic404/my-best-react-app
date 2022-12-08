@@ -3,13 +3,13 @@ import userEvent from '@testing-library/user-event'
 
 import { EditableProfileCard } from './EditableProfileCard'
 
-import { Profile } from 'entities/Profile'
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
+import { Profile } from '@/entities/Profile'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
 
-import { $api } from 'shared/api/api'
+import { $api } from '@/shared/api/api'
 import { profileReducer } from '../../model/slice/profileSlice'
-import { ComponentRender } from 'shared/lib/tests/ComponentRender'
+import { ComponentRender } from '@/shared/lib/tests/ComponentRender'
 
 const profile: Profile = {
   id: '1',

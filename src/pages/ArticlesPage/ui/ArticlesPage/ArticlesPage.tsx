@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
-import { Page } from 'widgets/Page'
+import { Page } from '@/widgets/Page'
 
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
@@ -10,10 +10,10 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader'
 
 import styles from './ArticlesPage.module.scss'
 

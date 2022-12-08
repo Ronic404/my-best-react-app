@@ -2,7 +2,7 @@ import { memo, ReactNode, useCallback } from 'react'
 
 import { Card } from '../Card'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 import styles from './Tabs.module.scss'
 

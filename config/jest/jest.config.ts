@@ -21,6 +21,7 @@ export default {
   moduleNameMapper: {
     '\\.(css|less|scss)$': 'identity-obj-proxy',
     '\\.svg': '<rootDir>/config/jest/__mocks__/svg.tsx',
+    '@/': '<rootDir>/src',
   },
   globals: {
     __IS_DEV__: true,

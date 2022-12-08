@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-import { SortOrder } from 'shared/types'
-import { ArticleSortField, ArticleType, ArticleViewType } from 'entities/Article'
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { SortOrder } from '@/shared/types'
+import { ArticleSortField, ArticleType, ArticleViewType } from '@/entities/Article'
 
 export const getArticlesPageNum = (state: StateSchema): number => state.articlesPage?.page ?? 1
 export const getArticlesPageType = (state: StateSchema): ArticleType => state.articlesPage?.type ?? 'ALL'

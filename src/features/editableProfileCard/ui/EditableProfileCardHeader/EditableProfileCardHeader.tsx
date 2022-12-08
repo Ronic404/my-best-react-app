@@ -2,11 +2,11 @@ import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { Text } from 'shared/ui/Text'
-import { Button } from 'shared/ui/Button'
-import { HStack } from 'shared/ui/Stack/HStack'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Text } from '@/shared/ui/Text'
+import { Button } from '@/shared/ui/Button'
+import { HStack } from '@/shared/ui/Stack/HStack'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 import { getUserAuthData } from '../../../../entities/User'
 

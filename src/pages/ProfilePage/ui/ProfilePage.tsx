@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { EditableProfileCard } from 'features/editableProfileCard'
+import { EditableProfileCard } from '@/features/editableProfileCard'
 
-import { Page } from 'widgets/Page'
-import { VStack } from 'shared/ui/Stack/VStack'
+import { Page } from '@/widgets/Page'
+import { VStack } from '@/shared/ui/Stack/VStack'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 export interface IProfilePageProps {
   className?: string

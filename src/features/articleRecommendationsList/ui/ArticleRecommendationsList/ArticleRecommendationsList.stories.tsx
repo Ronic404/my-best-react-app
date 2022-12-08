@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import withMock from 'storybook-addon-mock'
 
 import { Article } from '../../../../entities/Article'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { ArticleRecommendationsList, IArticleRecommendationsListProps } from './ArticleRecommendationsList'
 
 export default {

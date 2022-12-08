@@ -7,24 +7,24 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
-import { Icon } from 'shared/ui/Icon'
-import { Text } from 'shared/ui/Text'
-import { Avatar } from 'shared/ui/Avatar'
-import { Skeleton } from 'shared/ui/Skeleton'
-import { HStack, VStack } from 'shared/ui/Stack'
+import { Icon } from '@/shared/ui/Icon'
+import { Text } from '@/shared/ui/Text'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { HStack, VStack } from '@/shared/ui/Stack'
 
-import { classNames } from 'shared/lib/classNames/classNames'
-import { DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader'
-import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader'
+import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 import { ArticleBlock } from '../../model/types/article'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { fetchArticleById } from '../..//model/services/fetchArticleById/fetchArticleById'
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails'
 
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
-import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg'
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg'
 
 import styles from './ArticleDetails.module.scss'
 

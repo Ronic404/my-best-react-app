@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { AppRouter } from './providers/router'
 
-import { Navbar } from 'widgets/Navbar'
-import { Sidebar } from 'widgets/Sidebar'
+import { Navbar } from '@/widgets/Navbar'
+import { Sidebar } from '@/widgets/Sidebar'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 import { getUserInited, userActions } from '../entities/User'
 

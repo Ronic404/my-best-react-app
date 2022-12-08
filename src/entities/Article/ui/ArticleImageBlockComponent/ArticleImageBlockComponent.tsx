@@ -1,8 +1,8 @@
 import { memo } from 'react'
 
-import { Text } from 'shared/ui/Text'
+import { Text } from '@/shared/ui/Text'
 import { ArticleImageBlock } from '../../model/types/article'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 import styles from './ArticleImageBlockComponent.module.scss'
 

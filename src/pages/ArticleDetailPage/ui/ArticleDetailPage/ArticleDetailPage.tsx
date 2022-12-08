@@ -4,15 +4,15 @@ import { useParams } from 'react-router-dom'
 import { ArticleDetails } from '../../../../entities/Article'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
-import { ArticleRecommendationsList } from 'features/articleRecommendationsList'
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 
-import { Page } from 'widgets/Page'
-import { VStack } from 'shared/ui/Stack'
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader'
+import { Page } from '@/widgets/Page'
+import { VStack } from '@/shared/ui/Stack'
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader'
 
 import { articleDetailsPageReducer } from '../../model/slices'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 import styles from './ArticleDetailPage.module.scss'
 

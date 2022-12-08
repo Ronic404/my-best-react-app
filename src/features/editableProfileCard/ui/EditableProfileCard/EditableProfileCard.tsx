@@ -2,8 +2,8 @@ import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { Text } from 'shared/ui/Text'
-import { VStack } from 'shared/ui/Stack'
+import { Text } from '@/shared/ui/Text'
+import { VStack } from '@/shared/ui/Stack'
 
 import { Country } from '../../../../entities/Country'
 import { Currency } from '../../../../entities/Currency'
@@ -19,10 +19,10 @@ import { ValidateProfileError } from '../../model/consts/consts'
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader'
 
 export interface IEditableProfileCardProps {
   className?: string

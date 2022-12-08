@@ -4,8 +4,8 @@ import { Listbox as HListBox } from '@headlessui/react'
 import { HStack } from '../../../Stack'
 import { Button } from '../../../Button'
 
-import { classNames } from 'shared/lib/classNames/classNames'
-import { DropdownDirection } from 'shared/types/ui'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { DropdownDirection } from '@/shared/types/ui'
 import { mapDirectionClass } from '../../styles/consts'
 
 import styles from './ListBox.module.scss'

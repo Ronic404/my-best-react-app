@@ -1,10 +1,10 @@
 import { FC, Suspense } from 'react'
 
 import { LoginForm } from '../LoginForm'
-import { Modal } from 'shared/ui/Modal'
-import { Loader } from 'shared/ui/Loader'
+import { Modal } from '@/shared/ui/Modal'
+import { Loader } from '@/shared/ui/Loader'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 import styles from './LoginModal.module.scss'
 

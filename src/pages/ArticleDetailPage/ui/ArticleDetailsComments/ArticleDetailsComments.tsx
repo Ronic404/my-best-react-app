@@ -2,20 +2,20 @@ import { memo, Suspense, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { Text } from 'shared/ui/Text'
-import { VStack } from 'shared/ui/Stack'
-import { Loader } from 'shared/ui/Loader'
+import { Text } from '@/shared/ui/Text'
+import { VStack } from '@/shared/ui/Stack'
+import { Loader } from '@/shared/ui/Loader'
 import { CommentList } from '../../../../entities/Comments'
-import { AddCommentForm } from 'features/addCommentForm'
+import { AddCommentForm } from '@/features/addCommentForm'
 
 import { getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments'
 
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 
 export interface IArticleDetailsCommentsProps {
   className?: string

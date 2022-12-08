@@ -2,18 +2,18 @@ import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { Card } from 'shared/ui/Card'
-import { Input } from 'shared/ui/Input'
+import { Card } from '@/shared/ui/Card'
+import { Input } from '@/shared/ui/Input'
 import { ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleViewSelector, ArticleViewType } from '../../../../entities/Article'
 
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { articlesPageActions } from '../../model/slices/articlesPageSlice'
 import { getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
 
-import { SortOrder } from 'shared/types'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { SortOrder } from '@/shared/types'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 import styles from './ArticlesPageFilters.module.scss'
 

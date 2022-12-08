@@ -3,9 +3,9 @@ import { FC, ReactNode } from 'react'
 import { Portal } from '../Portal'
 import { Overlay } from '../Overlay'
 
-import { useTheme } from 'app/providers/ThemeProvider'
-import { useModal } from 'shared/lib/hooks/useModal/useModal'
-import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { useTheme } from '@/app/providers/ThemeProvider'
+import { useModal } from '@/shared/lib/hooks/useModal/useModal'
+import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 
 import styles from './Modal.module.scss'
 

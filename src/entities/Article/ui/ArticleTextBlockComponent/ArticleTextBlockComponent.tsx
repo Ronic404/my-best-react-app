@@ -2,8 +2,8 @@ import { memo } from 'react'
 
 import { ArticleTextBlock } from '../..//model/types/article'
 
-import { Text } from 'shared/ui/Text'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { Text } from '@/shared/ui/Text'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 import styles from './ArticleTextBlockComponent.module.scss'
 

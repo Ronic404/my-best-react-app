@@ -3,8 +3,8 @@ import { Menu } from '@headlessui/react'
 
 import { AppLink } from '../../../AppLink'
 
-import { classNames } from 'shared/lib/classNames/classNames'
-import { DropdownDirection } from 'shared/types/ui'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { DropdownDirection } from '@/shared/types/ui'
 import { mapDirectionClass } from '../../styles/consts'
 
 import styles from './Dropdown.module.scss'
