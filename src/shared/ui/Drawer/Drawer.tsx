@@ -6,7 +6,7 @@ import { Overlay } from '../Overlay'
 import { useTheme } from '@/app/providers/ThemeProvider'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
 
 import styles from './Drawer.module.scss'
 
@@ -90,7 +90,7 @@ export const DrawerContent = memo((props: IDrawerProps) => {
   )
 })
 
-export const Drawer = memo((props: IDrawerProps) => {
+const DrawerAsync = (props: IDrawerProps): JSX.Element | null => {
   const { isLoaded } = useAnimationLibs()
 
   if (!isLoaded) {
@@ -98,4 +98,12 @@ export const Drawer = memo((props: IDrawerProps) => {
   }
 
   return <DrawerContent {...props} />
-})
+}
+
+export const Drawer = (props: IDrawerProps): JSX.Element => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  )
+}
