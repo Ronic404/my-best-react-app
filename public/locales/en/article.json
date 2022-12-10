@@ -20,5 +20,7 @@
   "notFound": "Articles not found",
   "editArticleWithId": "Edit article with ID",
   "createArticle": "Create new article",
+  "rateArticle": "Rate article",
+  "reviewArticle": "Leave a review about the article",
   "loadingError": "An error occured while loading article"
 }

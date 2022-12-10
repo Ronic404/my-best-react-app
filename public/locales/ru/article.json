@@ -20,5 +20,7 @@
   "notFound": "Статьи не найдены",
   "editArticleWithId": "Редактирование статьи с ID",
   "createArticle": "Создание новой статьи",
+  "rateArticle": "Оцените статью",
+  "reviewArticle": "Оставьте свой отзыв о статье",
   "loadingError": "Произошла ошибка при загрузке статьи"
 }

@@ -9,6 +9,7 @@ export type CardTheme = 'normal' | 'outlined'
 export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
   theme?: CardTheme
+  max?: boolean
 }
 
 export const Card = memo((props: ICardProps) => {
@@ -16,12 +17,13 @@ export const Card = memo((props: ICardProps) => {
     className,
     children,
     theme = 'normal',
+    max,
     ...otherProps
   } = props
 
   return (
     <div
-      className={classNames(styles.card, {}, [className, styles[theme]])}
+      className={classNames(styles.card, { [styles.max]: max }, [className, styles[theme]])}
       {...otherProps}
     >
       {children}

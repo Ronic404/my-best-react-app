@@ -14,7 +14,12 @@ export default ({ config }: { config: Configuration }): Configuration => {
     buildLocales: path.resolve(__dirname, '../../dist/locales'),
   }
 
-  config.resolve?.modules?.push(paths.src, 'node_modules')
+  if (config.resolve) {
+    config.resolve.modules?.push(paths.src, 'node_modules')
+    config.resolve.alias = {
+      '@': path.resolve(__dirname, '../../src'),
+    }
+  }
 
   // @ts-expect-error
   config.module?.rules = config.module?.rules?.map((rule: RuleSetRule) => {

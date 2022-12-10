@@ -606,21 +606,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
     }
   ],
@@ -646,6 +652,62 @@
       "city": "Glazov",
       "username": "user",
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "id": "NH2cxf6"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 5,
+      "id": "geJYN9_"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 1,
+      "id": "etPJsHO"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "id": "4uQWGsE"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }

@@ -11,25 +11,30 @@ import { Button } from '@/shared/ui/Button'
 import { StarRating } from '@/shared/ui/StarRating'
 import { HStack, VStack } from '@/shared/ui/Stack'
 
-import { classNames } from '@/shared/lib/classNames/classNames'
-
-import styles from './RatingCard.module.scss'
-
 export interface IRatingCardProps {
   className?: string
-  title?: string
-  feedbackTitle?: string
+  title?: string | null
+  feedbackTitle?: string | null
   hasFeedback?: boolean
+  rate?: number
   onCancel?: (starsCount: number) => void
   onAccept?: (starsCount: number, feedback?: string) => void
 }
 
 export const RatingCard = memo((props: IRatingCardProps) => {
-  const { className, title, feedbackTitle, hasFeedback, onCancel, onAccept } = props
+  const {
+    className,
+    title,
+    feedbackTitle,
+    hasFeedback,
+    rate = 0,
+    onCancel,
+    onAccept,
+  } = props
   const { t } = useTranslation()
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-  const [starsCount, setStarsCount] = useState<number>(0)
+  const [starsCount, setStarsCount] = useState<number>(rate)
   const [feedback, setFeedback] = useState<string>('')
 
   const onSelectStars = useCallback((selectedStarsCount: number) => {
@@ -60,10 +65,10 @@ export const RatingCard = memo((props: IRatingCardProps) => {
   )
 
   return (
-    <Card className={classNames(styles.___, {}, [className])}>
-      <VStack align='center' gap='8'>
-        <Text title={title} />
-        <StarRating size={40} onSelect={onSelectStars} />
+    <Card className={className} max>
+      <VStack align='center' gap='8' max>
+        <Text title={starsCount ? t('thanksForRating') : title} />
+        <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
       </VStack>
 
       <BrowserView>
