@@ -26,5 +26,7 @@
   "error": "Error",
   "admin": "Admin",
   "adminPanel": "Admin panel",
+  "feedback": "Feedback",
+  "close": "Close",
   "forbidden": "Forbidden"
 }

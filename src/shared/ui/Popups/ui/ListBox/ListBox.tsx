@@ -55,7 +55,7 @@ export const ListBox: FC<ListBoxProps> = (props) => {
         disabled={readOnly}
         onChange={onChange}
       >
-        <HListBox.Button className={styles.trigger} disabled={readOnly}>
+        <HListBox.Button className={styles.trigger} as='div'>
           <Button disabled={readOnly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
 

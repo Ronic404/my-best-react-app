@@ -28,8 +28,6 @@ export const RequireAuth: FC<IRequireAuthProps> = ({ children, roles }) => {
     })
   }, [roles, userRoles])
 
-  console.log(roles)
-
   if (!auth) {
     return <Navigate to={RoutePaths.MAIN} state={{ from: location }} replace />
   }
