@@ -17,7 +17,8 @@ export default ({ config }: { config: Configuration }): Configuration => {
   if (config.resolve) {
     config.resolve.modules?.push(paths.src, 'node_modules')
     config.resolve.alias = {
-      '@': path.resolve(__dirname, '../../src'),
+      ...config.resolve.alias,
+      '@': paths.src,
     }
   }
 
