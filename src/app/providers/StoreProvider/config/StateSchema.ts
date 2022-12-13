@@ -7,7 +7,7 @@ import { articleDetailsSchema } from '../../../../entities/Article'
 
 import { UISchema } from '@/features/UI'
 import { LoginSchema } from '@/features/AuthByUsername'
-import { ProfileSchema } from '@/features/editableProfileCard/model/types/editableProfileCardSchema'
+import { ProfileSchema } from '@/features/editableProfileCard'
 import { AddCommentFormSchema } from '@/features/addCommentForm'
 
 import { ArticlePageSchema } from '@/pages/ArticlesPage'
