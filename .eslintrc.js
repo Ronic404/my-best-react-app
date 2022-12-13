@@ -44,6 +44,6 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'comma-dangle': ['error', 'always-multiline'],
     'react-hooks/exhaustive-deps': 'warn',
-    'ronic-plugin/path-checker': 'error',
+    'ronic-plugin/path-checker': ['error', { alias: '@' }],
   },
 }
