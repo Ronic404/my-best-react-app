@@ -8,7 +8,7 @@ import { Skeleton } from '@/shared/ui/Skeleton'
 
 import { Comment } from '../../model/types/comment'
 
-import { RoutePaths } from '@/shared/config/routeConfig/routeConfig'
+import { RoutePaths } from '@/shared/constants/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
 import styles from './CommentCard.module.scss'

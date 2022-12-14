@@ -9,8 +9,8 @@ import { Button } from '@/shared/ui/Button'
 import { getCanEditArticle } from '../../model/selectors/article'
 import { getArticleDetailsData } from '../../../../entities/Article'
 
+import { RoutePaths } from '@/shared/constants/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { RoutePaths } from '@/shared/config/routeConfig/routeConfig'
 
 export interface IArticleDetailsPageHeaderProps {
   className?: string

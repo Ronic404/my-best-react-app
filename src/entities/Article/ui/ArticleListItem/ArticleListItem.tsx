@@ -11,8 +11,8 @@ import { AppLink } from '@/shared/ui/AppLink'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { Article, ArticleTextBlock, ArticleViewType } from '../../model/types/article'
 
+import { RoutePaths } from '@/shared/constants/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { RoutePaths } from '@/shared/config/routeConfig/routeConfig'
 
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
 

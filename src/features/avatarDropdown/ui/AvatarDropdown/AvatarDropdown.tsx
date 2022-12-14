@@ -8,9 +8,8 @@ import { Dropdown } from '@/shared/ui/Popups'
 
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '../../../../entities/User'
 
+import { RoutePaths } from '@/shared/constants/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
-
-import { RoutePaths } from '@/shared/config/routeConfig/routeConfig'
 
 import styles from './AvatarDropdown.module.scss'
 

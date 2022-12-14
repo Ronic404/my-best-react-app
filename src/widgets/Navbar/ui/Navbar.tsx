@@ -14,7 +14,7 @@ import { LoginModal } from '@/features/AuthByUsername'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { getUserAuthData } from '../../../entities/User'
 
-import { RoutePaths } from '@/shared/config/routeConfig/routeConfig'
+import { RoutePaths } from '@/shared/constants/router'
 
 import styles from './Navbar.module.scss'
 
