@@ -4,12 +4,12 @@ import { Story } from '@storybook/react'
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
 
-import { loginReducer } from '@/features/AuthByUsername'
-import { profileReducer } from '@/features/editableProfileCard'
-import { articlesPageReducer } from '@/pages/ArticlesPage'
-import { addCommentFormReducer } from '@/features/addCommentForm'
-import { articleDetailsReducer } from '../../../entities/Article'
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailPage'
+import { loginReducer } from '@/features/AuthByUsername/testing'
+import { profileReducer } from '@/features/editableProfileCard/testing'
+import { articlesPageReducer } from '@/pages/ArticlesPage/testing'
+import { addCommentFormReducer } from '@/features/addCommentForm/testing'
+import { articleDetailsReducer } from '../../../entities/Article/testing'
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailPage/testing'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,

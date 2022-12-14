@@ -5,7 +5,6 @@ export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelecto
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
 
 export { getArticleDetailsData } from './model/selectors/articleDetails'
-export { articleDetailsReducer } from './model/slice/articleDetailsSlice'
 
 export type { ArticleViewType } from './model/types/article'
 export type { articleDetailsSchema } from './model/types/articleDetailsSchema'

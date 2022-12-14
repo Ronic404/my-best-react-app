@@ -45,6 +45,9 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'react-hooks/exhaustive-deps': 'warn',
     'ronic-plugin/path-checker': ['error', { alias: '@' }],
-    'ronic-plugin/public-api-imports': ['error', { alias: '@' }],
+    'ronic-plugin/public-api-imports': ['error', {
+      alias: '@',
+      testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+    }],
   },
 }
