@@ -1,6 +1,8 @@
 import { Story } from '@storybook/react'
 
-import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/constants/theme'
+// eslint-disable-next-line ronic-plugin/layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider'
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => {
   return (

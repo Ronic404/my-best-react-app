@@ -1,7 +1,9 @@
 /* eslint-disable indent */
 import { useContext, useEffect } from 'react'
 
-import { LS_THEME_KEY, Theme, ThemeContext } from './ThemeContext'
+import { Theme } from '../../../constants/theme'
+import { ThemeContext } from '../../context/ThemeContext'
+import { LS_THEME_KEY } from '../../../constants/localStorage'
 
 interface IUseThemeResult {
   toggleTheme: () => void

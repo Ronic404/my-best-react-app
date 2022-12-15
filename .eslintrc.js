@@ -49,5 +49,9 @@ module.exports = {
       alias: '@',
       testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
     }],
+    'ronic-plugin/layer-imports': ['error', {
+      alias: '@',
+      ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+    }],
   },
 }

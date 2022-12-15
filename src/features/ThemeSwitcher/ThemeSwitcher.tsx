@@ -1,10 +1,11 @@
 import { memo } from 'react'
 
-import { Theme, useTheme } from '@/app/providers/ThemeProvider'
+import { Button } from '@/shared/ui/Button'
 
+import { Theme } from '@/shared/constants/theme'
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
-import { Button } from '@/shared/ui/Button'
 import DarkIcon from '@/shared/assets/icons/theme-dark.svg'
 import LightIcon from '@/shared/assets/icons/theme-light.svg'
 
