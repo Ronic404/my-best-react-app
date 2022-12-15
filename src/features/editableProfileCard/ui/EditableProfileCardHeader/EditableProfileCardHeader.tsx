@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import { Text } from '@/shared/ui/Text'
 import { Button } from '@/shared/ui/Button'
-import { HStack } from '@/shared/ui/Stack/HStack'
+import { HStack } from '@/shared/ui/Stack'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 
