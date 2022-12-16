@@ -12,6 +12,14 @@ interface IUseModalProps {
   onClose?: () => void
 }
 
+/**
+ * Переиспользуемый хук для модальных компонентов (drawer/modal)
+ * @param isOpen
+ * @param animationDelay
+ * @param onClose
+ * @returns
+ */
+
 export function useModal(props: IUseModalProps): IUseModalReturn {
   const { isOpen, animationDelay, onClose } = props
   const [isClosing, setIsClosing] = useState<boolean>(false)
