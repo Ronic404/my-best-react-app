@@ -3,10 +3,9 @@ import { useTranslation } from 'react-i18next'
 
 import { Select, SelectOption } from '@/shared/ui/Select'
 
-import { ArticleSortField } from '../../model/types/article'
-
 import { SortOrder } from '@/shared/types'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { ArticleSortField } from '@/entities/Article'
 
 import styles from './ArticleSortSelector.module.scss'
 
