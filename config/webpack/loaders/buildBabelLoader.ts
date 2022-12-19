@@ -8,12 +8,15 @@ interface BuildBabelLoaderProps extends IBuildOptions {
 }
 
 export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps): RuleSetRule {
+  const isProd = !isDev
+
   return {
     test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
       options: {
+        cacheDirectory: true,
         presets: ['@babel/preset-env'],
         plugins: [
           [
@@ -21,7 +24,7 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps): RuleS
             { isTsx },
           ],
           '@babel/plugin-transform-runtime',
-          isTsx && [
+          isTsx && isProd && [
             babelRemovePropsPlugin,
             { attr: ['data-testid'] },
           ],
