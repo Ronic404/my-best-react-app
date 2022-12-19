@@ -1,13 +1,12 @@
-import { FC, useMemo } from 'react'
+import { FC, ReactElement, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, useLocation } from 'react-router-dom'
 
+import { getRouteForbidden, getRouteMain } from '@/shared/constants/router'
 import { getUserAuthData, getUserRoles, UserRole } from '../../../../entities/User'
 
-import { RoutePaths } from '@/shared/constants/router'
-
 interface IRequireAuthProps {
-  children: any
+  children: ReactElement
   roles?: UserRole[]
 }
 
@@ -29,11 +28,11 @@ export const RequireAuth: FC<IRequireAuthProps> = ({ children, roles }) => {
   }, [roles, userRoles])
 
   if (!auth) {
-    return <Navigate to={RoutePaths.MAIN} state={{ from: location }} replace />
+    return <Navigate to={getRouteMain()} state={{ from: location }} replace />
   }
 
   if (!hasRequiredRoles) {
-    return <Navigate to={RoutePaths.FORBIDDEN} state={{ from: location }} replace />
+    return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />
   }
 
   return children

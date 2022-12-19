@@ -1,8 +1,9 @@
 import { createSelector } from '@reduxjs/toolkit'
 
-import { RoutePaths } from '@/shared/constants/router'
 import { SidebarItemType } from '../types/sidebar'
 import { getUserAuthData } from '../../../../entities/User'
+
+import { getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile } from '@/shared/constants/router'
 
 import ArticleIcon from '@/shared/assets/icons/article-20-20.svg'
 import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg'
@@ -14,12 +15,12 @@ export const getSidebarItems = createSelector(
   (userData) => {
     const sidebarItemsList: SidebarItemType[] = [
       {
-        path: RoutePaths.MAIN,
+        path: getRouteMain(),
         icon: MainIcon,
         text: 'main',
       },
       {
-        path: RoutePaths.ABOUT,
+        path: getRouteAbout(),
         icon: AboutIcon,
         text: 'about',
       },
@@ -28,13 +29,13 @@ export const getSidebarItems = createSelector(
     if (userData) {
       sidebarItemsList.push(
         {
-          path: RoutePaths.PROFILE + userData.id,
+          path: getRouteProfile(userData.id),
           icon: ProfileIcon,
           text: 'profile',
           authOnly: true,
         },
         {
-          path: RoutePaths.ARTICLES,
+          path: getRouteArticles(),
           icon: ArticleIcon,
           text: 'articles',
           authOnly: true,

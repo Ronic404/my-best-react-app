@@ -8,8 +8,8 @@ import { Skeleton } from '@/shared/ui/Skeleton'
 
 import { Comment } from '../../model/types/comment'
 
-import { RoutePaths } from '@/shared/constants/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { getRouteProfile } from '@/shared/constants/router'
 
 import styles from './CommentCard.module.scss'
 
@@ -38,7 +38,7 @@ export const CommentCard = memo(({ className, comment, isLoading }: ICommentCard
 
   return (
     <VStack className={classNames(styles.commentCard, {}, [className])} gap='8' max>
-      <AppLink className={styles.header} to={`${RoutePaths.PROFILE}${comment.user.id}`}>
+      <AppLink className={styles.header} to={getRouteProfile(comment.user.id)}>
         {comment.user.avatar &&
           <Avatar src={comment.user.avatar} size={30} />
         }

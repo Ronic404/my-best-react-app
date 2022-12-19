@@ -10,54 +10,66 @@ import ArticleDetailPage from '@/pages/ArticleDetailPage'
 
 import { UserRole } from '../../../../entities/User'
 import { AppRoutesProps } from '@/shared/types/router'
-import { AppRoutes, RoutePaths } from '@/shared/constants/router'
+import {
+  AppRoutes,
+  getRouteAbout,
+  getRouteAdminPanel,
+  getRouteArticleCreate,
+  getRouteArticleDetails,
+  getRouteArticleEdit,
+  getRouteArticles,
+  getRouteForbidden,
+  getRouteMain,
+  getRouteNotFound,
+  getRouteProfile,
+} from '@/shared/constants/router'
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {
-    path: RoutePaths.MAIN,
+    path: getRouteMain(),
     element: <MainPage />,
   },
   [AppRoutes.ABOUT]: {
-    path: RoutePaths.ABOUT,
+    path: getRouteAbout(),
     element: <AboutPage />,
   },
   [AppRoutes.PROFILE]: {
-    path: RoutePaths.PROFILE + ':id',
+    path: getRouteProfile(':id'),
     element: <ProfilePage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLES]: {
-    path: RoutePaths.ARTICLES,
+    path: getRouteArticles(),
     element: <ArticlesPage />,
     authOnly: true,
   },
   [AppRoutes.FORBIDDEN]: {
-    path: RoutePaths.FORBIDDEN,
+    path: getRouteForbidden(),
     element: <ForbiddenPage />,
   },
   [AppRoutes.ADMIN_PANEL]: {
-    path: RoutePaths.ADMIN_PANEL,
+    path: getRouteAdminPanel(),
     element: <AdminPanelPage />,
     authOnly: true,
     roles: [UserRole.ADMIN, UserRole.MANAGER],
   },
   [AppRoutes.ARTICLE_EDIT]: {
-    path: RoutePaths.ARTICLE_EDIT,
+    path: getRouteArticleEdit(':id'),
     element: <ArticleEditPage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLE_CREATE]: {
-    path: RoutePaths.ARTICLE_CREATE,
+    path: getRouteArticleCreate(),
     element: <ArticleEditPage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLE_DETAILS]: {
-    path: RoutePaths.ARTICLE_DETAILS + ':id',
+    path: getRouteArticleDetails(':id'),
     element: <ArticleDetailPage />,
     authOnly: true,
   },
   [AppRoutes.NOT_FOUND]: {
-    path: RoutePaths.NOT_FOUND,
+    path: getRouteNotFound(),
     element: <NotFoundPage />,
   },
 }

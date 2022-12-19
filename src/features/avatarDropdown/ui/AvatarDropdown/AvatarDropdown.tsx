@@ -8,8 +8,8 @@ import { Dropdown } from '@/shared/ui/Popups'
 
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '../../../../entities/User'
 
-import { RoutePaths } from '@/shared/constants/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/constants/router'
 
 import styles from './AvatarDropdown.module.scss'
 
@@ -42,13 +42,13 @@ export const AvatarDropdown = memo((props: IAvatarDropdownProps) => {
         ...(isAdminPanelAvailable
           ? [{
             content: t('admin'),
-            href: RoutePaths.ADMIN_PANEL,
+            href: getRouteAdminPanel(),
           }]
           : []
         ),
         {
           content: t('profile'),
-          href: RoutePaths.PROFILE + authData.id,
+          href: getRouteProfile(authData.id),
         },
         {
           content: t('logOut'),

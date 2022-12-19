@@ -14,7 +14,7 @@ import { LoginModal } from '@/features/AuthByUsername'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { getUserAuthData } from '../../../entities/User'
 
-import { RoutePaths } from '@/shared/constants/router'
+import { getRouteArticleCreate } from '@/shared/constants/router'
 
 import styles from './Navbar.module.scss'
 
@@ -46,7 +46,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
 
         <AppLink
           className={styles.createBtn}
-          to={RoutePaths.ARTICLE_CREATE}
+          to={getRouteArticleCreate()}
           theme='secondary'
         >
           {t('createArticle')}

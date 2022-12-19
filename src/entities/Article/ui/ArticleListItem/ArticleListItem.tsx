@@ -11,8 +11,8 @@ import { AppLink } from '@/shared/ui/AppLink'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { Article, ArticleTextBlock, ArticleViewType } from '../../model/types/article'
 
-import { RoutePaths } from '@/shared/constants/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { getRouteArticleDetails } from '@/shared/constants/router'
 
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
 
@@ -55,7 +55,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
             <ArticleTextBlockComponent className={styles.textBlock} block={textBlock} />
           }
           <div className={styles.footer}>
-            <AppLink to={RoutePaths.ARTICLE_DETAILS + article.id} target={target}>
+            <AppLink to={getRouteArticleDetails(article.id)} target={target}>
               <Button theme='outline'>{t('next')}</Button>
             </AppLink>
             {views}
@@ -68,7 +68,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
   return (
     <AppLink
       className={classNames(styles.articleListItem, {}, [className, styles[view]])}
-      to={RoutePaths.ARTICLE_DETAILS + article.id}
+      to={getRouteArticleDetails(article.id)}
       target={target}
     >
       <Card className={styles.card}>

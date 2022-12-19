@@ -9,8 +9,8 @@ import { Button } from '@/shared/ui/Button'
 import { getCanEditArticle } from '../../model/selectors/article'
 import { getArticleDetailsData } from '../../../../entities/Article'
 
-import { RoutePaths } from '@/shared/constants/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/constants/router'
 
 export interface IArticleDetailsPageHeaderProps {
   className?: string
@@ -24,12 +24,12 @@ export const ArticleDetailsPageHeader = memo(({ className }: IArticleDetailsPage
   const canEdit = useSelector(getCanEditArticle)
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePaths.ARTICLES)
+    navigate(getRouteArticles())
   }, [navigate])
 
   const onEditArticle = useCallback(() => {
-    if (article?.id) {
-      navigate(`${RoutePaths.ARTICLE_DETAILS}${article.id}/edit`)
+    if (article) {
+      navigate(getRouteArticleEdit(article.id))
     }
   }, [article, navigate])
 
