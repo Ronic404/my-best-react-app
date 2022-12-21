@@ -1,4 +1,4 @@
-import { FC, ReactElement, useMemo } from 'react'
+import { FC, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, useLocation } from 'react-router-dom'
 
@@ -6,7 +6,7 @@ import { getRouteForbidden, getRouteMain } from '@/shared/constants/router'
 import { getUserAuthData, getUserRoles, UserRole } from '../../../../entities/User'
 
 interface IRequireAuthProps {
-  children: ReactElement
+  children: any
   roles?: UserRole[]
 }
 
