@@ -7,6 +7,8 @@ import { Card } from '@/shared/ui/Card'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Button } from '@/shared/ui/Button'
 import { AppLink } from '@/shared/ui/AppLink'
+import { AppImage } from '@/shared/ui/AppImage'
+import { Skeleton } from '@/shared/ui/Skeleton'
 
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { Article, ArticleTextBlock, ArticleViewType } from '../../model/types/article'
@@ -50,7 +52,12 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
           </div>
           <Text className={styles.title} title={article.title} />
           {types}
-          <img className={styles.img} src={article.img} alt={article.title} />
+          <AppImage
+            className={styles.img}
+            src={article.img}
+            alt={article.title}
+            fallback={<Skeleton width='100%' height={250} />}
+          />
           {textBlock &&
             <ArticleTextBlockComponent className={styles.textBlock} block={textBlock} />
           }
@@ -73,7 +80,12 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
     >
       <Card className={styles.card}>
         <div className={styles.imageWrapper}>
-          <img className={styles.img} src={article.img} alt={article.title} />
+          <AppImage
+            className={styles.img}
+            src={article.img}
+            alt={article.title}
+            fallback={<Skeleton width={200} height={200} />}
+          />
           <Text className={styles.date} text={article.createdAt} />
         </div>
         <div className={styles.infoWrapper}>
