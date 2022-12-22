@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { getUIScrollByPath, uiActions } from '@/features/UI'
 
+import { ITestProps } from '@/shared/types/tests'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -13,7 +14,7 @@ import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfin
 
 import styles from './Page.module.scss'
 
-export interface IPageProps {
+export interface IPageProps extends ITestProps {
   className?: string
   children: ReactNode
   onScrollEnd?: () => void
@@ -21,7 +22,8 @@ export interface IPageProps {
 
 export const PAGE_ID = 'PAGE_ID'
 
-export const Page = memo(({ className, children, onScrollEnd }: IPageProps) => {
+export const Page = memo((props: IPageProps) => {
+  const { className, children, onScrollEnd } = props
   const location = useLocation()
   const dispatch = useAppDispatch()
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>
@@ -51,6 +53,7 @@ export const Page = memo(({ className, children, onScrollEnd }: IPageProps) => {
       ref={wrapperRef}
       onScroll={onScroll}
       id={PAGE_ID}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {onScrollEnd &&

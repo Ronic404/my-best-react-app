@@ -13,7 +13,7 @@ const ForbiddenPage = memo(({ className }: IForbiddenPageProps) => {
   const { t } = useTranslation()
 
   return (
-    <Page className={classNames('', {}, [className])}>
+    <Page className={classNames('', {}, [className])} data-testid='ForbiddenPage'>
       {t('forbidden')}
     </Page>
   )

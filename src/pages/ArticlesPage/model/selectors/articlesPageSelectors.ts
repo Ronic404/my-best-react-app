@@ -1,5 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider'
-import { SortOrder } from '@/shared/types'
+import { SortOrder } from '@/shared/types/sort'
 import { ArticleSortField, ArticleType, ArticleViewType } from '@/entities/Article'
 
 export const getArticlesPageNum = (state: StateSchema): number => state.articlesPage?.page ?? 1

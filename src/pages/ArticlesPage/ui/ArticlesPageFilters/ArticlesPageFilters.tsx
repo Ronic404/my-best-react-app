@@ -13,7 +13,7 @@ import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchA
 import { articlesPageActions } from '../../model/slices/articlesPageSlice'
 import { getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView } from '../../model/selectors/articlesPageSelectors'
 
-import { SortOrder } from '@/shared/types'
+import { SortOrder } from '@/shared/types/sort'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
