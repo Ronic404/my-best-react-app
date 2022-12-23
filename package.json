@@ -76,7 +76,7 @@
     "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-ronic-plugin": "^0.2.1",
+    "eslint-plugin-ronic-plugin": "^0.2.3",
     "eslint-plugin-storybook": "^0.6.8",
     "eslint-plugin-unused-imports": "^2.0.0",
     "file-loader": "^6.2.0",
