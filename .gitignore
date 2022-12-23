@@ -2,7 +2,7 @@ node_modules
 
 /dist
 /storybook-static
-/reports
+/reports/unit
 
 .idea
 .vscode
