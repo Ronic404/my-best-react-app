@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run lint:ts
-npm run lint:scss
+npx lint-staged
 npm run test:unit
 # npm run test:ui нужно запускать вручную, т.к. работает только со сторибуком
