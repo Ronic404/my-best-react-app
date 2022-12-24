@@ -1,6 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-// @ts-expect-error
-import withMock from 'storybook-addon-mock'
 
 import { Article } from '../../../../entities/Article'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
@@ -11,7 +9,6 @@ export default {
   component: ArticleRecommendationsList,
   argTypes: {
   },
-  decorators: [withMock],
 } as ComponentMeta<typeof ArticleRecommendationsList>
 
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args: IArticleRecommendationsListProps) => <ArticleRecommendationsList {...args} />

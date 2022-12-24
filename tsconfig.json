@@ -23,6 +23,6 @@
   },
   "include": [
     "./**/*.ts",
-    "./**/*.tsx", "src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsxd", "src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsxd",
+    "./**/*.tsx", "src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsxd", "src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsxd", "config/storybook/webpackf.configf.tsf", "config/storybook/webpackf.configf.tsf",
   ],
 }

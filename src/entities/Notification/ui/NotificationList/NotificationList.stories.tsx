@@ -1,6 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-// @ts-expect-error
-import withMock from 'storybook-addon-mock'
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { NotificationList, INotificationListProps } from './NotificationList'
@@ -10,7 +8,6 @@ export default {
   component: NotificationList,
   argTypes: {
   },
-  decorators: [withMock],
 } as ComponentMeta<typeof NotificationList>
 
 const Template: ComponentStory<typeof NotificationList> = (args: INotificationListProps) => <NotificationList {...args} />

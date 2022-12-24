@@ -1,6 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-// @ts-expect-error
-import withMock from 'storybook-addon-mock'
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import ArticleRating, { IArticleRatingProps } from './ArticleRating'
@@ -10,7 +8,6 @@ export default {
   component: ArticleRating,
   argTypes: {
   },
-  decorators: [withMock],
 } as ComponentMeta<typeof ArticleRating>
 
 const Template: ComponentStory<typeof ArticleRating> = (args: IArticleRatingProps) => <ArticleRating {...args} />
