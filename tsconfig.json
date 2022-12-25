@@ -15,6 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "isolatedModules": true,
+    "types": ["jest", "node", "@types/testing-library__jest-dom"]
   },
   "ts-node": {
     "compilerOptions": {
@@ -23,6 +24,7 @@
   },
   "include": [
     "./**/*.ts",
-    "./**/*.tsx", "src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsxd", "src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsxd", "config/storybook/webpackf.configf.tsf", "config/storybook/webpackf.configf.tsf",
+    "./**/*.tsx",
   ],
+  "exclude": ["node_modules", "cypress", "./cypress.config.ts"]
 }
