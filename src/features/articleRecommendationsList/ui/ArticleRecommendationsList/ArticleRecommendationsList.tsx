@@ -20,7 +20,11 @@ export const ArticleRecommendationsList = memo(({ className }: IArticleRecommend
   if ((isLoading || error) ?? !articles) return null
 
   return (
-    <VStack className={classNames('', {}, [className])} gap='8'>
+    <VStack
+      className={classNames('', {}, [className])}
+      gap='8'
+      data-testid='ArticleRecommendationsList'
+    >
       <Text
         title={t('recommendations')}
         size='L'

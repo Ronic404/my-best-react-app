@@ -549,6 +549,19 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Javascript news СВЕЖАЯ",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.04.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "kTTpgCI"
     }
   ],
   "comments": [
@@ -660,6 +673,17 @@
       "country": "Russia",
       "city": "Glazov",
       "username": "user",
+      "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 36,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Glazov",
+      "username": "testuser",
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
     }
   ],

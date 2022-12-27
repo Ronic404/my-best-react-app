@@ -19,12 +19,14 @@ export const AppLink = memo(({
   to,
   theme = 'primary',
   target,
+  ...otherProps
 }: IAppLinkProps) => {
   return (
     <Link
       className={classNames(styles.appLink, {}, [className, styles[theme]])}
       to={to}
       target={target}
+      { ...otherProps }
     >
       {children}
     </Link>

@@ -20,7 +20,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json',
+    project: ['./tsconfig.json', 'cypress/tsconfig.json'],
   },
   plugins: ['react', 'i18next', 'react-hooks', 'unused-imports', 'ronic-plugin'],
   rules: {
@@ -37,6 +37,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/no-invalid-void-type': 'warn',
     '@typescript-eslint/no-misused-promises': 'off',
+    '@typescript-eslint/no-namespace': 'off',
     'i18next/no-literal-string': ['warn', {
       markupOnly: true, onlyAttribute: [''],
     }],
