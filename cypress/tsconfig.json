@@ -7,7 +7,7 @@
     "isolatedModules": false,
   },
   "extends": "../tsconfig.json",
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "files": ["../cypress.config.ts"],
 }
