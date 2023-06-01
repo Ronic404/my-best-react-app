@@ -53,7 +53,7 @@ const PORT = 8443
 const HTTP_PORT = 8000
 
 const httpsServer = https.createServer(options, server)
-const httpServer = http.createServer(options)
+const httpServer = http.createServer(server)
 
 httpsServer.listen(PORT, () => {
   console.log(`server is running on ${PORT} port`)
