@@ -1,5 +1,6 @@
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { SortOrder } from '@/shared/types/sort'
+import { buildSelector } from '@/shared/lib/store'
 import { ArticleSortField, ArticleType, ArticleViewType } from '@/entities/Article'
 
 export const getArticlesPageNum = (state: StateSchema): number => state.articlesPage?.page ?? 1
@@ -13,3 +14,5 @@ export const getArticlesPageSearch = (state: StateSchema): string => state.artic
 export const getArticlesPageInited = (state: StateSchema): boolean => state.articlesPage?._inited ?? false
 export const getArticlesPageHasMore = (state: StateSchema): boolean => state.articlesPage?.hasMore ?? false
 export const getArticlesPageIsLoading = (state: StateSchema): boolean => state.articlesPage?.isLoading ?? false
+
+export const [useArticleItemById] = buildSelector((state, id: string) => state.articlesPage?.entities[id])
