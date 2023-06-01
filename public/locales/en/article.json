@@ -22,5 +22,6 @@
   "createArticle": "Create new article",
   "rateArticle": "Rate article",
   "reviewArticle": "Leave a review about the article",
+  "willSoon": "Article rating will appear soon",
   "loadingError": "An error occured while loading article"
 }

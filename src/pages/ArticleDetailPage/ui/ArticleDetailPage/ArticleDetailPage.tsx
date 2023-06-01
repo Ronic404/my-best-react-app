@@ -8,16 +8,17 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDet
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 
 import { Page } from '@/widgets/Page'
+import { Card } from '@/shared/ui/Card'
 import { VStack } from '@/shared/ui/Stack'
-import { Counter } from '@/entities/Counter'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader'
 
 import { articleDetailsPageReducer } from '../../model/slices'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { getFeatureFlag } from '@/shared/lib/features'
+import { toggleFeatures } from '@/shared/lib/features'
 
 import styles from './ArticleDetailPage.module.scss'
+import { useTranslation } from 'react-i18next'
 
 export interface IArticleDetailPageProps {
   className?: string
@@ -28,13 +29,18 @@ const reducers: ReducersList = {
 }
 
 const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
+  const { t } = useTranslation('article')
   const { id } = useParams<{ id: string }>()
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled')
-  const isCounterEnabled = getFeatureFlag('isCounterEnabled')
 
   if (!id) {
     return null
   }
+
+  const articleRatingCard = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => <Card>{t('willSoon')}</Card>,
+  })
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -42,8 +48,7 @@ const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
         <VStack gap='16' max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {isCounterEnabled && <Counter />}
-          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+          {articleRatingCard}
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
