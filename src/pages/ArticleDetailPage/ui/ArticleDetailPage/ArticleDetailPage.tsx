@@ -9,11 +9,13 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 
 import { Page } from '@/widgets/Page'
 import { VStack } from '@/shared/ui/Stack'
+import { Counter } from '@/entities/Counter'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader'
 
 import { articleDetailsPageReducer } from '../../model/slices'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { getFeatureFlag } from '@/shared/lib/features'
 
 import styles from './ArticleDetailPage.module.scss'
 
@@ -27,6 +29,8 @@ const reducers: ReducersList = {
 
 const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
   const { id } = useParams<{ id: string }>()
+  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled')
+  const isCounterEnabled = getFeatureFlag('isCounterEnabled')
 
   if (!id) {
     return null
@@ -38,7 +42,8 @@ const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
         <VStack gap='16' max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
+          {isCounterEnabled && <Counter />}
+          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

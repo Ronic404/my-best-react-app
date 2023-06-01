@@ -622,6 +622,10 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo"
     },
     {
@@ -631,6 +635,10 @@
       "roles": [
         "USER"
       ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
     },
     {
@@ -640,6 +648,10 @@
       "roles": [
         "MANAGER"
       ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": true
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
     },
     {
@@ -649,6 +661,10 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo"
     }
   ],
