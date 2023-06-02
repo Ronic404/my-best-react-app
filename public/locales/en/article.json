@@ -23,5 +23,7 @@
   "rateArticle": "Rate article",
   "reviewArticle": "Leave a review about the article",
   "willSoon": "Article rating will appear soon",
+  "welcome": "Welcome to the articles page",
+  "browseTopics": "Here you can search and browse articles on various topics",
   "loadingError": "An error occured while loading article"
 }

@@ -629,7 +629,8 @@
       "jsonSettings": {
         "theme": "dark",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo"
     },

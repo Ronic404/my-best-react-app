@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 
 import { Page } from '@/widgets/Page'
 
+import { ArticlePageGreeting } from '@/features/articlePageGreeting'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
 
@@ -50,6 +51,7 @@ const ArticlesPage: FC<IArticlesPageProps> = ({ className }) => {
       >
         <ArticlesPageFilters />
         <ArticleInfiniteList className={styles.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   )
