@@ -626,6 +626,11 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
       },
+      "jsonSettings": {
+        "theme": "dark",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
+      },
       "avatar": "https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo"
     },
     {
@@ -638,6 +643,11 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "dark",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
     },
@@ -652,6 +662,11 @@
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true
       },
+      "jsonSettings": {
+        "theme": "dark",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
     },
     {
@@ -664,6 +679,11 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "dark",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://yt3.ggpht.com/a/AGF-l79DFPPIso416ZkJDI8SSYHjQrO_azk-zWpV3Q=s900-c-k-c0xffffffff-no-rj-mo"
     }

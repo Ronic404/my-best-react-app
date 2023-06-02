@@ -3,10 +3,9 @@ import { useContext, useEffect } from 'react'
 
 import { Theme } from '../../../constants/theme'
 import { ThemeContext } from '../../context/ThemeContext'
-import { LS_THEME_KEY } from '../../../constants/localStorage'
 
 interface IUseThemeResult {
-  toggleTheme: () => void
+  toggleTheme: (saveAction?: (theme: Theme) => void) => void
   theme: Theme
 }
 
@@ -19,7 +18,7 @@ export function useTheme(): IUseThemeResult {
     }
   }, [theme])
 
-  const toggleTheme = (): void => {
+  const toggleTheme = (saveAction?: (theme: Theme) => void): void => {
     let newTheme: Theme
     switch (theme) {
       case Theme.DARK:
@@ -36,8 +35,7 @@ export function useTheme(): IUseThemeResult {
     }
 
     setTheme?.(newTheme)
-    document.body.className = newTheme
-    localStorage.setItem(LS_THEME_KEY, newTheme)
+    saveAction?.(newTheme)
   }
 
   return {
