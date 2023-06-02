@@ -10,12 +10,12 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 import { Page } from '@/widgets/Page'
 import { Card } from '@/shared/ui/Card'
 import { VStack } from '@/shared/ui/Stack'
+import { ToggleFeatures } from '@/shared/lib/features'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader'
 
 import { articleDetailsPageReducer } from '../../model/slices'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { toggleFeatures } from '@/shared/lib/features'
 
 import styles from './ArticleDetailPage.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -36,19 +36,17 @@ const ArticleDetailPage: FC<IArticleDetailPageProps> = ({ className }) => {
     return null
   }
 
-  const articleRatingCard = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => <Card>{t('willSoon')}</Card>,
-  })
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(styles.articleDetailPage, {}, [className])}>
         <VStack gap='16' max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {articleRatingCard}
+          <ToggleFeatures
+            feature='isArticleRatingEnabled'
+            on={<ArticleRating articleId={id} />}
+            off={<Card>{t('willSoon')}</Card>}
+          />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
