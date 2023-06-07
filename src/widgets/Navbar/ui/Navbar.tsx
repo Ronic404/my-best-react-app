@@ -7,6 +7,7 @@ import { HStack } from '@/shared/ui/Stack'
 import { Button } from '@/shared/ui/Button'
 import { AppLink } from '@/shared/ui/AppLink'
 
+import { ToggleFeatures } from '@/shared/lib/features'
 import { AvatarDropdown } from '@/features/avatarDropdown'
 import { NotificationButton } from '@/features/notificationButton'
 
@@ -37,26 +38,39 @@ export const Navbar = memo(({ className }: INavbarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(styles.navbar, {}, [className])}>
-        <Text
-          className={styles.appName}
-          title={t('myApp')}
-          theme='inverted'
-        />
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        on={
+          <header className={classNames(styles.navbarRedesigned, {}, [className])}>
+            <HStack className={styles.actions} gap='16'>
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+        off={
+          <header className={classNames(styles.navbar, {}, [className])}>
+            <Text
+              className={styles.appName}
+              title={t('myApp')}
+              theme='inverted'
+            />
 
-        <AppLink
-          className={styles.createBtn}
-          to={getRouteArticleCreate()}
-          theme='secondary'
-        >
-          {t('createArticle')}
-        </AppLink>
+            <AppLink
+              className={styles.createBtn}
+              to={getRouteArticleCreate()}
+              theme='secondary'
+            >
+              {t('createArticle')}
+            </AppLink>
 
-        <HStack className={styles.actions} gap='16'>
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
-      </header>
+            <HStack className={styles.actions} gap='16'>
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+      />
     )
   }
 
