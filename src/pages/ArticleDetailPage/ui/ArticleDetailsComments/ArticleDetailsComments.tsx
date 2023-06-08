@@ -2,9 +2,9 @@ import { memo, Suspense, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { Text } from '@/shared/ui/Text'
-import { VStack } from '@/shared/ui/Stack'
-import { Loader } from '@/shared/ui/Loader'
+import { Text } from '@/shared/ui/deprecated/Text'
+import { VStack } from '@/shared/ui/deprecated/Stack'
+import { Loader } from '@/shared/ui/deprecated/Loader'
 import { CommentList } from '../../../../entities/Comments'
 import { AddCommentForm } from '@/features/addCommentForm'
 

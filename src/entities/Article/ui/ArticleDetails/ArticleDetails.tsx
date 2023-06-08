@@ -7,11 +7,11 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
-import { Icon } from '@/shared/ui/Icon'
-import { Text } from '@/shared/ui/Text'
-import { Avatar } from '@/shared/ui/Avatar'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import { HStack, VStack } from '@/shared/ui/Stack'
+import { Icon } from '@/shared/ui/deprecated/Icon'
+import { Text } from '@/shared/ui/deprecated/Text'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader'

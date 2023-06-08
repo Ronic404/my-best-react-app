@@ -2,8 +2,8 @@ import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { Text } from '@/shared/ui/Text'
-import { VStack } from '@/shared/ui/Stack'
+import { Text } from '@/shared/ui/deprecated/Text'
+import { VStack } from '@/shared/ui/deprecated/Stack'
 
 import { Country } from '../../../../entities/Country'
 import { Currency } from '../../../../entities/Currency'

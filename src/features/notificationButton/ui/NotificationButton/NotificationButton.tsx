@@ -1,10 +1,10 @@
 import { memo, useCallback, useState } from 'react'
 import { BrowserView, MobileView } from 'react-device-detect'
 
-import { Icon } from '@/shared/ui/Icon'
-import { Button } from '@/shared/ui/Button'
-import { Drawer } from '@/shared/ui/Drawer'
-import { Popover } from '@/shared/ui/Popups'
+import { Icon } from '@/shared/ui/deprecated/Icon'
+import { Button } from '@/shared/ui/deprecated/Button'
+import { Drawer } from '@/shared/ui/deprecated/Drawer'
+import { Popover } from '@/shared/ui/deprecated/Popups'
 
 import { NotificationList } from '../../../../entities/Notification'
 

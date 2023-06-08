@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Text } from '@/shared/ui/Text'
-import { Input } from '@/shared/ui/Input'
-import { Avatar } from '@/shared/ui/Avatar'
-import { Loader } from '@/shared/ui/Loader'
-import { HStack, VStack } from '@/shared/ui/Stack'
+import { Text } from '@/shared/ui/deprecated/Text'
+import { Input } from '@/shared/ui/deprecated/Input'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
+import { Loader } from '@/shared/ui/deprecated/Loader'
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack'
 
 import { Country, CountrySelect } from '../../../../entities/Country'
 import { Currency, CurrencySelect } from '../../../../entities/Currency'

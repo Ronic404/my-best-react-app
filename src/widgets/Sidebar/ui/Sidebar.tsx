@@ -1,9 +1,9 @@
 import { memo, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import { Button } from '@/shared/ui/Button'
-import { VStack } from '@/shared/ui/Stack'
-import { AppLogo } from '@/shared/ui/AppLogo'
+import { Button } from '@/shared/ui/deprecated/Button'
+import { VStack } from '@/shared/ui/deprecated/Stack'
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo'
 import { SidebarItem } from './SidebarItem/SidebarItem'
 import { LangSwitcher } from '@/features/LangSwitcher'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'

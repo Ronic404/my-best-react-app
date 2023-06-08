@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
-import { Icon } from '@/shared/ui/Icon'
-import { Button } from '@/shared/ui/Button'
+import { Icon } from '@/shared/ui/deprecated/Icon'
+import { Button } from '@/shared/ui/deprecated/Button'
 
 import { ArticleViewType } from '@/entities/Article'
 import { classNames } from '@/shared/lib/classNames/classNames'

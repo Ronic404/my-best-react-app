@@ -2,9 +2,9 @@ import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { Input } from '@/shared/ui/Input'
-import { HStack } from '@/shared/ui/Stack'
-import { Button } from '@/shared/ui/Button'
+import { Input } from '@/shared/ui/deprecated/Input'
+import { HStack } from '@/shared/ui/deprecated/Stack'
+import { Button } from '@/shared/ui/deprecated/Button'
 
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice'

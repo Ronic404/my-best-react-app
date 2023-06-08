@@ -2,7 +2,7 @@ import { memo } from 'react'
 
 import { ArticleTextBlock } from '../..//model/types/article'
 
-import { Text } from '@/shared/ui/Text'
+import { Text } from '@/shared/ui/deprecated/Text'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
 import styles from './ArticleTextBlockComponent.module.scss'

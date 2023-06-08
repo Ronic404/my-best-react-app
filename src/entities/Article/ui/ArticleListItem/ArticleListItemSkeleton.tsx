@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
-import { Card } from '@/shared/ui/Card'
-import { Skeleton } from '@/shared/ui/Skeleton'
+import { Card } from '@/shared/ui/deprecated/Card'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
 
 import { ArticleViewType } from '../../model/types/article'
 

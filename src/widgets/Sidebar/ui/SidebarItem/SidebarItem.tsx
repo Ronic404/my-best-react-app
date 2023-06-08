@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { AppLink } from '@/shared/ui/AppLink'
+import { AppLink } from '@/shared/ui/deprecated/AppLink'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
 import { getUserAuthData } from '../../../../entities/User'

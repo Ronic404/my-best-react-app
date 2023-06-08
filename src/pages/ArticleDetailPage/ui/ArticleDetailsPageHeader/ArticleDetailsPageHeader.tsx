@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { HStack } from '@/shared/ui/Stack'
-import { Button } from '@/shared/ui/Button'
+import { HStack } from '@/shared/ui/deprecated/Stack'
+import { Button } from '@/shared/ui/deprecated/Button'
 
 import { getCanEditArticle } from '../../model/selectors/article'
 import { getArticleDetailsData } from '../../../../entities/Article'

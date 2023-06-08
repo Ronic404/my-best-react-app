@@ -649,7 +649,8 @@
       "jsonSettings": {
         "theme": "dark",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://xakep.ru/wp-content/uploads/2020/03/278528/hacker.jpg"
     },
