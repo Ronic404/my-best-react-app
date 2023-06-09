@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { HStack } from '@/shared/ui/deprecated/Stack'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 import { Button } from '@/shared/ui/deprecated/Button'
 
 import { getCanEditArticle } from '../../model/selectors/article'

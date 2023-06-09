@@ -9,7 +9,7 @@ import { Input } from '@/shared/ui/deprecated/Input'
 import { Drawer } from '@/shared/ui/deprecated/Drawer'
 import { Button } from '@/shared/ui/deprecated/Button'
 import { StarRating } from '@/shared/ui/deprecated/StarRating'
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack'
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack'
 
 export interface IRatingCardProps {
   className?: string

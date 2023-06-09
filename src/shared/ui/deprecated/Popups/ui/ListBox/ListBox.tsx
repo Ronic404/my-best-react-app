@@ -1,7 +1,7 @@
 import { FC, Fragment, ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 
-import { HStack } from '../../../Stack'
+import { HStack } from '../../../../redesigned/Stack'
 import { Button } from '../../../Button'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
@@ -28,6 +28,10 @@ interface ListBoxProps {
   onChange: (value: string) => void
 }
 
+/**
+ * Устарел, используем новые компоненты из папки redesigned
+ * @deprecated
+ */
 export const ListBox: FC<ListBoxProps> = (props) => {
   const {
     className,

@@ -1,7 +1,7 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react'
 
-import { Portal } from '../Portal'
-import { Overlay } from '../Overlay'
+import { Portal } from '../../redesigned/Portal'
+import { Overlay } from '../../redesigned/Overlay'
 
 import { useTheme } from '../../../lib/hooks/useTheme/useTheme'
 import { classNames } from '../../../lib/classNames/classNames'

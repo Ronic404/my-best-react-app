@@ -24,6 +24,10 @@ interface DropdownProps {
   direction?: DropdownDirection
 }
 
+/**
+ * Устарел, используем новые компоненты из папки redesigned
+ * @deprecated
+ */
 export const Dropdown: FC<DropdownProps> = (props) => {
   const { className, items, trigger, direction = 'bottom right' } = props
 

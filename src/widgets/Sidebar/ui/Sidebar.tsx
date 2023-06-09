@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { Icon } from '@/shared/ui/redesigned/Icon'
 import { Button } from '@/shared/ui/deprecated/Button'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo'
 import { SidebarItem } from './SidebarItem/SidebarItem'
 import { LangSwitcher } from '@/features/LangSwitcher'

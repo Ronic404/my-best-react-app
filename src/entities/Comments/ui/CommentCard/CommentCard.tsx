@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
 import { Text } from '@/shared/ui/deprecated/Text'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import { AppLink } from '@/shared/ui/deprecated/AppLink'
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton'

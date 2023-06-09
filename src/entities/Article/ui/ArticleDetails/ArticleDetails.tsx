@@ -11,7 +11,7 @@ import { Icon } from '@/shared/ui/deprecated/Icon'
 import { Text } from '@/shared/ui/deprecated/Text'
 import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack'
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader'

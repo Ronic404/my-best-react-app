@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-areas: 'sidebar content rightbar';
-  grid-template-columns: 284px 1fr 100px;
+  grid-template-columns: min-content 1fr 100px;
 }
 
 .sidebar,
@@ -14,6 +14,7 @@
 
 .sidebar {
   grid-area: sidebar;
+  max-width: 284px;
   padding: 32px;
 }
 

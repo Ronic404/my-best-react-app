@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { HStack } from '../../deprecated/Stack'
+import { HStack } from '../Stack'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 

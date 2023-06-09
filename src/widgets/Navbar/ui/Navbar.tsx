@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { Text } from '@/shared/ui/deprecated/Text'
-import { HStack } from '@/shared/ui/deprecated/Stack'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 import { Button } from '@/shared/ui/deprecated/Button'
 import { AppLink } from '@/shared/ui/deprecated/AppLink'
 

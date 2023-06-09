@@ -15,6 +15,10 @@ export interface IPopoverProps {
   direction?: DropdownDirection
 }
 
+/**
+ * Устарел, используем новые компоненты из папки redesigned
+ * @deprecated
+ */
 export const Popover = memo((props: IPopoverProps) => {
   const { children, className, trigger, direction = 'bottom right' } = props
 

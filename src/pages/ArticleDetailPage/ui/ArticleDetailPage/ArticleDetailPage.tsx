@@ -9,7 +9,7 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 
 import { Page } from '@/widgets/Page'
 import { Card } from '@/shared/ui/deprecated/Card'
-import { VStack } from '@/shared/ui/deprecated/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader'
 

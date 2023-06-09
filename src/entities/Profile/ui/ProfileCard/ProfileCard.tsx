@@ -5,7 +5,7 @@ import { Text } from '@/shared/ui/deprecated/Text'
 import { Input } from '@/shared/ui/deprecated/Input'
 import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import { Loader } from '@/shared/ui/deprecated/Loader'
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack'
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack'
 
 import { Country, CountrySelect } from '../../../../entities/Country'
 import { Currency, CurrencySelect } from '../../../../entities/Currency'

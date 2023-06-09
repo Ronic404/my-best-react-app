@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
 import { Input } from '@/shared/ui/deprecated/Input'
-import { HStack } from '@/shared/ui/deprecated/Stack'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 import { Button } from '@/shared/ui/deprecated/Button'
 
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
