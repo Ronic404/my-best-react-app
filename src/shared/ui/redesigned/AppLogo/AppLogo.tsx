@@ -1,6 +1,6 @@
 import { memo } from 'react'
 
-import { HStack } from '../Stack'
+import { HStack } from '../../deprecated/Stack'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
@@ -10,18 +10,20 @@ import styles from './AppLogo.module.scss'
 
 interface IAppLogoProps {
   className?: string
+  size?: number
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
-export const AppLogo = memo(({ className }: IAppLogoProps) => {
+export const AppLogo = memo(({ className, size = 50 }: IAppLogoProps) => {
   return (
     <HStack className={classNames(styles.appLogoWrapper, {}, [className])} max justify='center'>
       <div className={styles.gradientBig} />
       <div className={styles.gradientSmall} />
-      <AppSvg className={styles.appLogo} />
+      <AppSvg
+        className={styles.appLogo}
+        width={size}
+        height={size}
+        color='black'
+      />
     </HStack>
   )
 })

@@ -1,9 +1,10 @@
 import { memo, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 
+import { Icon } from '@/shared/ui/redesigned/Icon'
 import { Button } from '@/shared/ui/deprecated/Button'
 import { VStack } from '@/shared/ui/deprecated/Stack'
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo'
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo'
 import { SidebarItem } from './SidebarItem/SidebarItem'
 import { LangSwitcher } from '@/features/LangSwitcher'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
@@ -12,6 +13,8 @@ import { ToggleFeatures } from '@/shared/lib/features'
 import { getSidebarItems } from '../model/selectors/getSidebarItems'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
+
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg'
 
 import styles from './Sidebar.module.scss'
 
@@ -40,10 +43,31 @@ export const Sidebar = memo(({ className }: ISidebarProps) => {
       feature='isAppRedesigned'
       on={
         <aside
-          className={classNames(styles.sidebarRedesigned, { [styles.collapsed]: collapsed }, [className])}
+          className={classNames(
+            styles.sidebarRedesigned,
+            { [styles.collapsedRedesigned]: collapsed },
+            [className],
+          )}
           data-testid='sidebar'
         >
-          <AppLogo className={styles.appLogo} />
+          <AppLogo className={styles.appLogo} size={collapsed ? 40 : 70} />
+
+          <VStack className={styles.items} gap='8' role='navigation'>
+            {itemsList}
+          </VStack>
+
+          <Icon
+            className={styles.collapseBtn}
+            data-testid='sidebar-toggle'
+            Svg={ArrowIcon}
+            clickable
+            onClick={onToggle}
+          />
+
+          <div className={classNames(styles.switchers, {}, [])}>
+            <ThemeSwitcher />
+            <LangSwitcher className={styles.lang} short={collapsed} />
+          </div>
         </aside>
       }
       off={

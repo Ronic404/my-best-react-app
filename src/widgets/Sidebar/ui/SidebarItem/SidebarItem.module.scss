@@ -17,5 +17,37 @@
   .link {
     width: 0;
     opacity: 0;
+    transition: 0.2s opacity;
+  }
+}
+
+.itemRedesigned {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.collapsedRedesigned {
+  padding: 0 8px;
+
+  .link {
+    width: 0;
+    margin: 0;
+    opacity: 0;
+  }
+}
+
+.active {
+  position: relative;
+  background: linear-gradient(90deg, rgb(29 89 255 / 30%) 1.15%, rgb(94 211 243 / 0%) 99%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: 0;
+    background: var(--accent-redesigned);
   }
 }
