@@ -6,6 +6,7 @@ import styles from './Card.module.scss'
 
 export type CardVariant = 'normal' | 'outlined' | 'light'
 export type CardPadding = '0' | '8' | '16' | '24'
+export type CardBorder = 'round' | 'normal'
 
 const mapPaddingToClass: Record<CardPadding, string> = {
   0: 'gap_0',
@@ -19,6 +20,7 @@ export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: CardVariant
   max?: boolean
   padding?: CardPadding
+  border?: CardBorder
 }
 
 export const Card = memo((props: ICardProps) => {
@@ -28,6 +30,7 @@ export const Card = memo((props: ICardProps) => {
     variant = 'normal',
     max,
     padding = '8',
+    border = 'normal',
     ...otherProps
   } = props
 
@@ -38,7 +41,7 @@ export const Card = memo((props: ICardProps) => {
       className={classNames(
         styles.card,
         { [styles.max]: max },
-        [className, styles[variant], styles[paddingClass]],
+        [className, styles[variant], styles[paddingClass], styles[border]],
       )}
       {...otherProps}
     >

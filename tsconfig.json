@@ -23,7 +23,7 @@
   },
   "include": [
     "./**/*.ts",
-    "./**/*.tsx",
+    "./**/*.tsx", "src/shared/layouts/StickyContentLayout/StickyContentLayout.module.scss",
   ],
   "exclude": ["node_modules", "cypress", "./cypress.config.ts"]
 }

@@ -1,6 +1,10 @@
 import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { Text } from '@/shared/ui/redesigned/Text'
+import { VStack } from '@/shared/ui/redesigned/Stack'
+import { ListBox } from '@/shared/ui/redesigned/Popups'
+import { ToggleFeatures } from '@/shared/lib/features'
 import { Select, SelectOption } from '@/shared/ui/deprecated/Select'
 
 import { SortOrder } from '@/shared/types/sort'
@@ -33,20 +37,42 @@ export const ArticleSortSelector = memo((props: IArticleSortSelectorProps) => {
   ], [t])
 
   return (
-    <div className={classNames(styles.articleSortSelector, {}, [className])}>
-      <Select
-        label={t('sortBy')}
-        options={sortFieldOptions}
-        value={sort}
-        onChange={onChangeSort}
-      />
-      <Select
-        className={styles.order}
-        label={t('by')}
-        options={orderOptions}
-        value={order}
-        onChange={onChangeOrder}
-      />
-    </div>
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      on={
+        <div className={classNames(styles.articleSortSelectorRedesigned, {}, [className])}>
+          <VStack gap='8'>
+            <Text text={t('sortBy')} />
+            <ListBox<ArticleSortField>
+              items={sortFieldOptions}
+              value={sort}
+              onChange={onChangeSort}
+            />
+            <ListBox<SortOrder>
+              items={orderOptions}
+              value={order}
+              onChange={onChangeOrder}
+            />
+          </VStack>
+        </div>
+      }
+      off={
+        <div className={classNames(styles.articleSortSelector, {}, [className])}>
+          <Select
+            label={t('sortBy')}
+            options={sortFieldOptions}
+            value={sort}
+            onChange={onChangeSort}
+          />
+          <Select
+            className={styles.order}
+            label={t('by')}
+            options={orderOptions}
+            value={order}
+            onChange={onChangeOrder}
+          />
+        </div>
+      }
+    />
   )
 })
