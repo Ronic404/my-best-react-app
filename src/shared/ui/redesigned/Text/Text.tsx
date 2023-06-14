@@ -14,6 +14,7 @@ export interface ITextProps {
   variant?: 'primary' | 'error' | 'accent'
   align?: 'left' | 'right' | 'center'
   size?: TextSize
+  bold?: boolean
   'data-testid'?: string
 }
 
@@ -37,6 +38,7 @@ export const Text = memo((props: ITextProps) => {
     variant = 'primary',
     align = 'left',
     size = 'M',
+    bold,
     'data-testid': dataTestId = 'Text',
   } = props
 
@@ -44,7 +46,7 @@ export const Text = memo((props: ITextProps) => {
   const sizeClass = mapSizeToClass[size]
 
   return (
-    <div className={classNames(styles.text, {}, [className, styles[variant], styles[align], sizeClass])}>
+    <div className={classNames(styles.text, { [styles.bold]: bold }, [className, styles[variant], styles[align], sizeClass])}>
       {title &&
         <HeaderTag
           className={styles.title}
