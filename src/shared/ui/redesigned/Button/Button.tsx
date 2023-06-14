@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, memo } from 'react'
+import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 
@@ -29,6 +29,14 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    * Увеличивает кнопку на всю свободную ширину
    */
   fullWidth?: boolean
+  /**
+   * Добавляет иконку слева
+   */
+  addonLeft?: ReactNode
+  /**
+   * Добавляет иконку справа
+   */
+  addonRight?: ReactNode
 }
 
 export const Button = memo(({
@@ -39,12 +47,15 @@ export const Button = memo(({
   size = 'm',
   disabled,
   fullWidth,
+  addonLeft,
+  addonRight,
   ...otherProps
 }: IButtonProps) => {
   const mods: Mods = {
     [styles.square]: square,
     [styles.disabled]: disabled,
     [styles.fullWidth]: fullWidth,
+    [styles.withAddon]: Boolean(addonLeft) || Boolean(addonRight),
   }
 
   return (
@@ -53,7 +64,9 @@ export const Button = memo(({
       disabled={disabled}
       {...otherProps}
     >
+      <div className={styles.addonLeft}>{addonLeft}</div>
       {children}
+      <div className={styles.addonRight}>{addonRight}</div>
     </button>
   )
 })

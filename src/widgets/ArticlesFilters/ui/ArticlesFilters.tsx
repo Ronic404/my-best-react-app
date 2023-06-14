@@ -2,6 +2,7 @@ import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Card } from '@/shared/ui/redesigned/Card'
+import { Icon } from '@/shared/ui/redesigned/Icon'
 import { Input } from '@/shared/ui/redesigned/Input'
 import { VStack } from '@/shared/ui/redesigned/Stack'
 
@@ -14,6 +15,8 @@ import { SortOrder } from '@/shared/types/sort'
 import { classNames } from '@/shared/lib/classNames/classNames'
 
 import styles from './ArticlesFilters.module.scss'
+
+import SearchIcon from '@/shared/assets/icons/search.svg'
 
 interface IArticlesFiltersProps {
   className?: string
@@ -34,7 +37,12 @@ export const ArticlesFilters = memo((props: IArticlesFiltersProps) => {
   return (
     <Card className={classNames(styles.articlesFilters, {}, [className])} padding='24'>
       <VStack gap='32'>
-        <Input value={search} placeholder={t('search')} onChange={onChangeSearch} />
+        <Input
+          value={search}
+          placeholder={t('search')}
+          addonLeft={<Icon Svg={SearchIcon} />}
+          onChange={onChangeSearch}
+        />
 
         <ArticleTypeTabs
           className={styles.tabs}
