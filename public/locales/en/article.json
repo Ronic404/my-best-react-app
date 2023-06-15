@@ -25,5 +25,7 @@
   "willSoon": "Article rating will appear soon",
   "welcome": "Welcome to the articles page",
   "browseTopics": "Here you can search and browse articles on various topics",
-  "loadingError": "An error occured while loading article"
+  "loadingError": "An error occured while loading article",
+  "views_one": "{{count}} view",
+  "views_other": "{{count}} views"
 }

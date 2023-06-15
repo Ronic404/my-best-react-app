@@ -19,6 +19,7 @@ export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
   variant?: CardVariant
   max?: boolean
+  fullHeight?: boolean
   padding?: CardPadding
   border?: CardBorder
 }
@@ -29,6 +30,7 @@ export const Card = memo((props: ICardProps) => {
     children,
     variant = 'normal',
     max,
+    fullHeight,
     padding = '8',
     border = 'normal',
     ...otherProps
@@ -40,7 +42,7 @@ export const Card = memo((props: ICardProps) => {
     <div
       className={classNames(
         styles.card,
-        { [styles.max]: max },
+        { [styles.max]: max, [styles.fullHeight]: fullHeight },
         [className, styles[variant], styles[paddingClass], styles[border]],
       )}
       {...otherProps}
