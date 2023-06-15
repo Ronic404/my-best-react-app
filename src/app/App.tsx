@@ -30,7 +30,7 @@ export const App: FC = () => {
     <ToggleFeatures
       feature='isAppRedesigned'
       off={
-        <div className={classNames('app', {}, [])}>
+        <div className={classNames('app', {}, [])} id='app'>
           <Suspense fallback={<></>}>
             <Navbar />
             <div className='content-page'>
@@ -41,7 +41,7 @@ export const App: FC = () => {
         </div>
       }
       on={
-        <div className={classNames('app_redesigned', {}, [])}>
+        <div className={classNames('app_redesigned', {}, [])} id='app'>
           <Suspense fallback={<></>}>
             <MainLayout
               header={<Navbar />}

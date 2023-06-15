@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { isMobile } from 'react-device-detect'
 
 import { Text } from '@/shared/ui/deprecated/Text'
-import { Modal } from '@/shared/ui/deprecated/Modal'
+import { Modal } from '@/shared/ui/redesigned/Modal'
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { saveJsonSettings, useJsonSettings } from '@/entities/User'
-import { Drawer } from '@/shared/ui/deprecated/Drawer'
+import { Drawer } from '@/shared/ui/redesigned/Drawer'
 
 export const ArticlePageGreeting = memo(() => {
   const { t } = useTranslation('article')

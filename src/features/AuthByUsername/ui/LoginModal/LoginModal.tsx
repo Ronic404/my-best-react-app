@@ -1,7 +1,7 @@
 import { FC, Suspense } from 'react'
 
 import { LoginForm } from '../LoginForm'
-import { Modal } from '@/shared/ui/deprecated/Modal'
+import { Modal } from '@/shared/ui/redesigned/Modal'
 import { Loader } from '@/shared/ui/deprecated/Loader'
 
 import { classNames } from '@/shared/lib/classNames/classNames'

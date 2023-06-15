@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from 'react'
 import { BrowserView, MobileView } from 'react-device-detect'
 
 import { Icon } from '@/shared/ui/redesigned/Icon'
-import { Drawer } from '@/shared/ui/deprecated/Drawer'
+import { Drawer } from '@/shared/ui/redesigned/Drawer'
 import { Popover } from '@/shared/ui/redesigned/Popups'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon'

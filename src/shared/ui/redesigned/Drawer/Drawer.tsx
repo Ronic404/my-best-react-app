@@ -1,10 +1,11 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react'
 
-import { Portal } from '../../redesigned/Portal'
-import { Overlay } from '../../redesigned/Overlay'
+import { Portal } from '../Portal'
+import { Overlay } from '../Overlay'
 
 import { useTheme } from '../../../lib/hooks/useTheme/useTheme'
 import { classNames } from '../../../lib/classNames/classNames'
+import { toggleFeatures } from '@/shared/lib/features'
 import { AnimationProvider, useAnimationLibs } from '../../../lib/components/AnimationProvider'
 
 import styles from './Drawer.module.scss'
@@ -19,10 +20,6 @@ export interface IDrawerProps {
   onClose?: () => void
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const DrawerContent = memo((props: IDrawerProps) => {
   const { className, children, isOpen, onClose } = props
   const { theme } = useTheme()
@@ -80,8 +77,17 @@ export const DrawerContent = memo((props: IDrawerProps) => {
   }
 
   return (
-    <Portal>
-      <div className={classNames(styles.drawer, {}, [className, theme, 'app_drawer'])}>
+    <Portal element={document.getElementById('app') ?? document.body}>
+      <div className={classNames(styles.drawer, {}, [
+        className,
+        theme,
+        'app_drawer',
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => styles.drawerNew,
+          off: () => styles.drawerOld,
+        }),
+      ])}>
         <Overlay onClick={close} />
         <Spring.a.div
           className={styles.sheet}
@@ -103,10 +109,6 @@ const DrawerAsync = (props: IDrawerProps): JSX.Element | null => {
   return <DrawerContent {...props} />
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Drawer = (props: IDrawerProps): JSX.Element => {
   return (
     <AnimationProvider>

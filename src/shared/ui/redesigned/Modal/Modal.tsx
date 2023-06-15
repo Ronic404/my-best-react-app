@@ -1,10 +1,11 @@
 import { FC, ReactNode } from 'react'
 
-import { Portal } from '../../redesigned/Portal'
-import { Overlay } from '../../redesigned/Overlay'
+import { Portal } from '../Portal'
+import { Overlay } from '../Overlay'
 
 import { useModal } from '../../../lib/hooks/useModal/useModal'
 import { useTheme } from '../../../lib/hooks/useTheme/useTheme'
+import { toggleFeatures } from '@/shared/lib/features'
 import { classNames, Mods } from '../../../lib/classNames/classNames'
 
 import styles from './Modal.module.scss'
@@ -17,10 +18,6 @@ export interface IModalProps {
   onClose: () => void
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Modal: FC<IModalProps> = ({ className, children, isOpen, lazy, onClose }) => {
   const { theme } = useTheme()
   const {
@@ -37,8 +34,17 @@ export const Modal: FC<IModalProps> = ({ className, children, isOpen, lazy, onCl
   }
 
   return (
-    <Portal>
-      <div className={classNames(styles.modal, mods, [className, theme, 'app_modal'])}>
+    <Portal element={document.getElementById('app') ?? document.body}>
+      <div className={classNames(styles.modal, mods, [
+        className,
+        theme,
+        'app_modal',
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => styles.modalNew,
+          off: () => styles.modalOld,
+        }),
+      ])}>
         <Overlay onClick={close} />
         <div className={styles.content}>{children}</div>
       </div>

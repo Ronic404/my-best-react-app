@@ -15,10 +15,21 @@
   height: calc(100vh + 100px);
   left: 2vw;
   padding: 15px;
-  background: var(--bg-color);
   border-radius: 12px 12px 0;
   touch-action: none;
   z-index: var(--modal-z-index);
+}
+
+.drawerNew {
+  .sheet {
+    background: var(--light-bg-redesigned);
+  }
+}
+
+.drawerOld {
+  .sheet {
+    background: var(--bg-color);
+  }
 }
 
 .opened {
