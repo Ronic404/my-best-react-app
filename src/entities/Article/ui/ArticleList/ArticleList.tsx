@@ -2,6 +2,8 @@ import { HTMLAttributeAnchorTarget, memo, ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Text } from '@/shared/ui/deprecated/Text'
+import { HStack } from '@/shared/ui/redesigned/Stack'
+import { ToggleFeatures } from '@/shared/lib/features'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import { Article, ArticleViewType } from '../../model/types/article'
@@ -45,23 +47,50 @@ export const ArticleList = memo((props: IArticleListProps) => {
   }
 
   return (
-    <div
-      className={classNames(styles.articleList, {}, [className, styles[view]])}
-      data-testid='ArticleList'
-    >
-      {articles.map((item) => (
-        <ArticleListItem
-          className={styles.card}
-          article={item}
-          view={view}
-          target={target}
-          key={item.id}
-        />
-      ))}
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      on={
+        <HStack
+          className={styles.articleListRedesigned}
+          data-testid='ArticleList'
+          gap='16'
+          wrap='wrap'
+        >
+          {articles.map((item) => (
+            <ArticleListItem
+              className={styles.card}
+              article={item}
+              view={view}
+              target={target}
+              key={item.id}
+            />
+          ))}
 
-      {isLoading &&
-        getSkeletons(view)
+          {isLoading &&
+            getSkeletons(view)
+          }
+        </HStack>
       }
-    </div>
+      off={
+        <div
+          className={classNames(styles.articleList, {}, [className, styles[view]])}
+          data-testid='ArticleList'
+        >
+          {articles.map((item) => (
+            <ArticleListItem
+              className={styles.card}
+              article={item}
+              view={view}
+              target={target}
+              key={item.id}
+            />
+          ))}
+
+          {isLoading &&
+            getSkeletons(view)
+          }
+        </div>
+      }
+    />
   )
 })

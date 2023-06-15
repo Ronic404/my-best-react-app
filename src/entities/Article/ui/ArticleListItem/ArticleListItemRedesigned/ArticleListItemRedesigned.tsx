@@ -26,7 +26,13 @@ export const ArticleListItemRedesigned = memo((props: IArticleListItemProps) => 
   const { className, article, view, target } = props
   const { t } = useTranslation('article')
 
-  const types = <Text className={styles.types} text={article.type.join(', ')} />
+  const userInfo = (
+    <>
+      <Avatar src={article.user.avatar} size={32} />
+      <Text text={article.user.username} bold />
+    </>
+  )
+
   const views = (
     <HStack gap='8'>
       <Icon Svg={EyeIcon} />
@@ -83,21 +89,23 @@ export const ArticleListItemRedesigned = memo((props: IArticleListItemProps) => 
       target={target}
       data-testid='ArticleListItem'
     >
-      <Card className={styles.card}>
-        <div className={styles.imageWrapper}>
-          <AppImage
-            className={styles.img}
-            src={article.img}
-            alt={article.title}
-            fallback={<Skeleton width={200} height={200} />}
-          />
-          <Text className={styles.date} text={article.createdAt} />
-        </div>
-        <div className={styles.infoWrapper}>
-          {types}
-          {views}
-        </div>
-        <Text className={styles.title} text={article.title} />
+      <Card className={styles.card} border='round'>
+        <AppImage
+          className={styles.img}
+          src={article.img}
+          alt={article.title}
+          fallback={<Skeleton width={200} height={200} />}
+        />
+        <VStack className={styles.info} gap='4'>
+          <Text className={styles.title} title={article.title} />
+          <VStack className={styles.footer} gap='4' max>
+            <HStack justify='between' max>
+              <Text className={styles.date} text={article.createdAt} />
+              {views}
+            </HStack>
+            <HStack gap='4'>{userInfo}</HStack>
+          </VStack>
+        </VStack>
       </Card>
     </AppLink>
   )

@@ -4,10 +4,11 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 
 import styles from './Flex.module.scss'
 
-type FlexJustify = 'start' | 'center' | 'end' | 'between'
-type FlexAlign = 'start' | 'center' | 'end'
+export type FlexJustify = 'start' | 'center' | 'end' | 'between'
+export type FlexAlign = 'start' | 'center' | 'end'
 export type FlexDirection = 'row' | 'column'
-type FlexGap = '4' | '8' | '16' | '24' | '32'
+export type FlexWrap = 'nowrap' | 'wrap'
+export type FlexGap = '4' | '8' | '16' | '24' | '32'
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: styles.justifyStart,
@@ -43,6 +44,7 @@ export interface IFlexProps extends DivProps {
   justify?: FlexJustify
   align?: FlexAlign
   direction: FlexDirection
+  wrap?: FlexWrap
   gap?: FlexGap
   max?: boolean
 }
@@ -54,6 +56,7 @@ export const Flex: FC<IFlexProps> = (props) => {
     justify = 'start',
     align = 'center',
     direction = 'row',
+    wrap = 'nowrap',
     gap,
     max,
     ...otherProps
@@ -64,6 +67,7 @@ export const Flex: FC<IFlexProps> = (props) => {
     justifyClasses[justify],
     alignClasses[align],
     directionClasses[direction],
+    styles[wrap],
     gap && gapClasses[gap],
   ]
 

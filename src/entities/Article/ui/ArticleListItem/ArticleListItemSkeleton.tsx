@@ -20,6 +20,12 @@ export interface IArticleListItemSkeletonProps {
 export const ArticleListItemSkeleton = memo((props: IArticleListItemSkeletonProps) => {
   const { className, view } = props
 
+  const mainClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => styles.articleListItemRedesigned,
+    off: () => styles.articleListItem,
+  })
+
   const Card = toggleFeatures({
     name: 'isAppRedesigned',
     on: () => CardRedesigned,
@@ -34,7 +40,7 @@ export const ArticleListItemSkeleton = memo((props: IArticleListItemSkeletonProp
 
   if (view === 'big') {
     return (
-      <div className={classNames(styles.articleListItem, {}, [className, styles[view]])}>
+      <div className={classNames(mainClass, {}, [className, styles[view]])}>
         <Card className={styles.card}>
           <div className={styles.header}>
             <Skeleton width={30} height={30} border='50%' />
@@ -52,7 +58,7 @@ export const ArticleListItemSkeleton = memo((props: IArticleListItemSkeletonProp
   }
 
   return (
-    <div className={classNames(styles.articleListItem, {}, [className, styles[view]])}>
+    <div className={classNames(mainClass, {}, [className, styles[view]])}>
       <Card className={styles.card}>
         <div className={styles.imageWrapper}>
           <Skeleton className={styles.img} width={200} height={200} />
