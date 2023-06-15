@@ -11,7 +11,7 @@ import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups'
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '../../../../entities/User'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { getRouteAdminPanel, getRouteProfile } from '@/shared/constants/router'
+import { getRouteAdminPanel, getRouteProfile, getRouteSettings } from '@/shared/constants/router'
 
 import styles from './AvatarDropdown.module.scss'
 import { ToggleFeatures } from '@/shared/lib/features'
@@ -46,6 +46,10 @@ export const AvatarDropdown = memo((props: IAvatarDropdownProps) => {
       }]
       : []
     ),
+    {
+      content: t('settings'),
+      href: getRouteSettings(),
+    },
     {
       content: t('profile'),
       href: getRouteProfile(authData.id),

@@ -3,6 +3,7 @@ export enum AppRoutes {
   ABOUT = 'about',
   PROFILE = 'profile',
   ARTICLES = 'articles',
+  SETTINGS = 'settings',
   FORBIDDEN = 'forbidden',
   ADMIN_PANEL = 'admin_panel',
   ARTICLE_EDIT = 'articles_edit',
@@ -15,6 +16,7 @@ export const getRouteMain = (): string => '/'
 export const getRouteAbout = (): string => '/about'
 export const getRouteProfile = (id: string): string => `/profile/${id}`
 export const getRouteArticles = (): string => '/articles'
+export const getRouteSettings = (): string => '/settings'
 export const getRouteForbidden = (): string => '/forbidden'
 export const getRouteAdminPanel = (): string => '/admin'
 export const getRouteArticleEdit = (id: string): string => `/articles/${id}/edit`

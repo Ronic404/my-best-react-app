@@ -29,5 +29,9 @@
   "feedback": "Feedback",
   "close": "Close",
   "thanksForRating": "Thanks for the rating",
+  "settings": "Settings",
+  "new": "New",
+  "old": "Old",
+  "interface": "Interface",
   "forbidden": "Forbidden"
 }

@@ -3,6 +3,7 @@ import AboutPage from '@/pages/AboutPage'
 import ProfilePage from '@/pages/ProfilePage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import ArticlesPage from '@/pages/ArticlesPage'
+import SettingsPage from '@/pages/SettingsPage'
 import ForbiddenPage from '@/pages/ForbiddenPage'
 import AdminPanelPage from '@/pages/AdminPanelPage'
 import ArticleEditPage from '@/pages/ArticleEditPage'
@@ -18,6 +19,7 @@ import {
   getRouteArticleDetails,
   getRouteArticleEdit,
   getRouteArticles,
+  getRouteSettings,
   getRouteForbidden,
   getRouteMain,
   getRouteNotFound,
@@ -42,6 +44,10 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     path: getRouteArticles(),
     element: <ArticlesPage />,
     authOnly: true,
+  },
+  [AppRoutes.SETTINGS]: {
+    path: getRouteSettings(),
+    element: <SettingsPage />,
   },
   [AppRoutes.FORBIDDEN]: {
     path: getRouteForbidden(),
