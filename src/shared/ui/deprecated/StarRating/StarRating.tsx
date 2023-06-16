@@ -1,6 +1,8 @@
 import { memo, useState } from 'react'
 
-import { Icon } from '../Icon'
+import { Icon } from '../../redesigned/Icon'
+import { Icon as IconDeprecated } from '../Icon'
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 
@@ -53,25 +55,43 @@ export const StarRating = memo((props: IStarRatingProps) => {
   }
 
   return (
-    <div className={classNames(styles.___, {}, [className])}>
-      {stars.map(starNumber => (
-        <Icon
-          className={classNames(
+    <div className={classNames(
+      toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => styles.starRatingRedesigned,
+        off: () => styles.starRating,
+      }),
+      {},
+      [className],
+    )}>
+      {stars.map(starNumber => {
+        const commonProps = {
+          className: classNames(
             styles.starIcon,
             { [styles.selected]: isSelected },
             [currentStarsCount >= starNumber ? styles.hovered : styles.normal],
-          )}
-          Svg={StarIcon}
-          width={size}
-          height={size}
-          onClick={() => onClick(starNumber)}
-          onMouseEnter={() => onHover(starNumber)}
-          onMouseLeave={onLeave}
-          key={starNumber}
-          data-testid={`StarRating.${starNumber}`}
-          data-selected={currentStarsCount >= starNumber}
-        />
-      ))}
+          ),
+          Svg: StarIcon,
+          width: size,
+          height: size,
+          onClick: () => onClick(starNumber),
+          onMouseEnter: () => onHover(starNumber),
+          onMouseLeave: onLeave,
+          key: starNumber,
+          'data-testid': `StarRating.${starNumber}`,
+          'data-selected': currentStarsCount >= starNumber,
+        }
+
+        return (
+          <ToggleFeatures
+            feature='isAppRedesigned'
+            on={<Icon {...commonProps} clickable={!isSelected} />}
+            off={<IconDeprecated {...commonProps} />}
+            key={starNumber}
+          />
+        )
+      },
+      )}
     </div>
   )
 })

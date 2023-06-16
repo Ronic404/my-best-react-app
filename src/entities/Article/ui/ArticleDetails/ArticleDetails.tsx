@@ -6,16 +6,16 @@ import { Icon } from '@/shared/ui/deprecated/Icon'
 import { Text } from '@/shared/ui/redesigned/Text'
 import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import { AppImage } from '@/shared/ui/redesigned/AppImage'
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton'
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack'
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text'
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features'
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton'
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton'
 
 import { renderArticleBlock } from './renderBlock'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { ToggleFeatures } from '@/shared/lib/features'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader'
 
@@ -76,10 +76,28 @@ const Redesigned: FC = () => {
       <AppImage
         className={styles.img}
         src={article?.img}
-        fallback={<Skeleton width='100%' height={420} border='16px' />}
+        fallback={<SkeletonRedesigned width='100%' height={420} border='16px' />}
       />
       {article?.blocks.map(renderArticleBlock)}
     </>
+  )
+}
+
+export const ArticleDetailsSkeleton: FC = () => {
+  const Skeleton = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => SkeletonRedesigned,
+    off: () => SkeletonDeprecated,
+  })
+
+  return (
+    <VStack gap='16' max>
+      <Skeleton className={styles.avatar} width={200} height={200} border="50%" />
+      <Skeleton className={styles.title} width={300} height={32} />
+      <Skeleton className={styles.skeleton} width={600} height={24} />
+      <Skeleton className={styles.skeleton} width="100%" height={200} />
+      <Skeleton className={styles.skeleton} width="100%" height={200} />
+    </VStack>
   )
 }
 
@@ -99,19 +117,9 @@ export const ArticleDetails = memo(({ className, id }: IArticleDetailsProps) => 
   let content
 
   if (isLoading) {
-    content = (
-      <>
-        <SkeletonDeprecated className={styles.avatar} width={200} height={200} border="50%" />
-        <SkeletonDeprecated className={styles.title} width={300} height={32} />
-        <SkeletonDeprecated className={styles.skeleton} width={600} height={24} />
-        <SkeletonDeprecated className={styles.skeleton} width="100%" height={200} />
-        <SkeletonDeprecated className={styles.skeleton} width="100%" height={200} />
-      </>
-    )
+    content = <ArticleDetailsSkeleton />
   } else if (error) {
-    content = (
-      <TextDeprecated title={t('loadingError')} align='center' />
-    )
+    content = <TextDeprecated title={t('loadingError')} align='center' />
   } else {
     content = (
       <ToggleFeatures

@@ -2,11 +2,13 @@ import { memo, Suspense, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { Text } from '@/shared/ui/deprecated/Text'
+import { Text } from '@/shared/ui/redesigned/Text'
 import { VStack } from '@/shared/ui/redesigned/Stack'
 import { Loader } from '@/shared/ui/deprecated/Loader'
 import { CommentList } from '../../../../entities/Comments'
+import { ToggleFeatures } from '@/shared/lib/features'
 import { AddCommentForm } from '@/features/addCommentForm'
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text'
 
 import { getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice'
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
@@ -38,9 +40,10 @@ export const ArticleDetailsComments = memo(({ className, id }: IArticleDetailsCo
 
   return (
     <VStack className={classNames('', {}, [className])} gap='16' max>
-      <Text
-        title={t('comments')}
-        size='L'
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        on={<Text title={t('comments')} size='L' />}
+        off={<TextDeprecated title={t('comments')} size='L' />}
       />
 
       <Suspense fallback={<Loader />}>
