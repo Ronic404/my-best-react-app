@@ -19,9 +19,9 @@ export interface ITextProps {
 }
 
 const mapSizeToClass: Record<TextSize, string> = {
-  S: 's',
-  M: 'm',
-  L: 'l',
+  S: styles.S,
+  M: styles.M,
+  L: styles.L,
 }
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
