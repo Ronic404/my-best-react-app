@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux'
 
 import { Text } from '@/shared/ui/deprecated/Text'
 import { HStack } from '@/shared/ui/redesigned/Stack'
-import { Button } from '@/shared/ui/deprecated/Button'
+import { Button } from '@/shared/ui/redesigned/Button'
 import { AppLink } from '@/shared/ui/deprecated/AppLink'
+import { Button as ButtonDeprecated } from '@/shared/ui/deprecated/Button'
 
-import { ToggleFeatures } from '@/shared/lib/features'
 import { AvatarDropdown } from '@/features/avatarDropdown'
 import { NotificationButton } from '@/features/notificationButton'
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features'
 
 import { LoginModal } from '@/features/AuthByUsername'
 import { classNames } from '@/shared/lib/classNames/classNames'
@@ -36,12 +37,18 @@ export const Navbar = memo(({ className }: INavbarProps) => {
     setIsAuthModal(true)
   }, [])
 
+  const mainClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => styles.navbarRedesigned,
+    off: () => styles.navbar,
+  })
+
   if (authData) {
     return (
       <ToggleFeatures
         feature='isAppRedesigned'
         on={
-          <header className={classNames(styles.navbarRedesigned, {}, [className])}>
+          <header className={classNames(mainClass, {}, [className])}>
             <HStack className={styles.actions} gap='16'>
               <NotificationButton />
               <AvatarDropdown />
@@ -49,7 +56,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
           </header>
         }
         off={
-          <header className={classNames(styles.navbar, {}, [className])}>
+          <header className={classNames(mainClass, {}, [className])}>
             <Text
               className={styles.appName}
               title={t('myApp')}
@@ -75,14 +82,28 @@ export const Navbar = memo(({ className }: INavbarProps) => {
   }
 
   return (
-    <header className={classNames(styles.navbar, {}, [className])}>
-      <Button
-        className={classNames(styles.button)}
-        theme='clearInverted'
-        onClick={onShowModal}
-      >
-        {t('logIn')}
-      </Button>
+    <header className={classNames(mainClass, {}, [className])}>
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        on={
+          <Button
+            className={classNames(styles.button)}
+            variant='clear'
+            onClick={onShowModal}
+          >
+            {t('logIn')}
+          </Button>
+        }
+        off={
+          <ButtonDeprecated
+            className={classNames(styles.button)}
+            theme='clearInverted'
+            onClick={onShowModal}
+          >
+            {t('logIn')}
+          </ButtonDeprecated>
+        }
+      />
       {isAuthModal &&
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       }

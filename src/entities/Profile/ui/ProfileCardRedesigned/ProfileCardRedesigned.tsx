@@ -23,7 +23,7 @@ export const ProfileCardRedesignedError: FC = () => {
 
 export const ProfileCardRedesignedSkeleton: FC = () => {
   return (
-    <Card padding='24' max>
+    <Card padding='24' border='partial' max>
       <VStack gap='32'>
         <HStack justify='center' max>
           <Skeleton width={128} height={128} border='100%' />

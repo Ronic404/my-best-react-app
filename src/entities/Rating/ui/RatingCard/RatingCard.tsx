@@ -167,7 +167,7 @@ export const RatingCard = memo((props: IRatingCardProps) => {
   return (
     <ToggleFeatures
       feature='isAppRedesigned'
-      on={<Card padding='24' border='round' max>{content}</Card>}
+      on={<Card padding='24' border='partial' max>{content}</Card>}
       off={
         <CardDeprecated className={className} max data-testid='RatingCard'>
           {content}

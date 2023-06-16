@@ -2,11 +2,15 @@ import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { Text } from '@/shared/ui/deprecated/Text'
-import { Button } from '@/shared/ui/deprecated/Button'
+import { Card } from '@/shared/ui/redesigned/Card'
+import { Text } from '@/shared/ui/redesigned/Text'
 import { HStack } from '@/shared/ui/redesigned/Stack'
+import { Button } from '@/shared/ui/redesigned/Button'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { ToggleFeatures } from '@/shared/lib/features'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text'
+import { Button as ButtonDeprecated } from '@/shared/ui/deprecated/Button'
 
 import { getUserAuthData } from '../../../../entities/User'
 
@@ -42,33 +46,69 @@ export const EditableProfileCardHeader = memo(({ className }: IEditableProfileCa
   }, [dispatch])
 
   return (
-    <HStack className={classNames('', {}, [className])} justify='between' max>
-      <Text title={t('profile')} />
-      {canEdit &&
-        <>
-          {readonly &&
-            <Button
-              theme='outline'
-              onClick={onEdit}
-              data-testid='EditableProfileCardHeader.EditButton'
-            >{t('edit')}</Button>
-          }
-          {!readonly &&
-            <HStack gap='8'>
-              <Button
-                theme='outline_red'
-                onClick={onCancelEdit}
-                data-testid='EditableProfileCardHeader.CancelButton'
-              >{t('cancel')}</Button>
-              <Button
-                theme='outline'
-                onClick={onSave}
-                data-testid='EditableProfileCardHeader.SaveButton'
-              >{t('save')}</Button>
-            </HStack>
-          }
-        </>
+    <ToggleFeatures
+      feature='isAppRedesigned'
+      on={
+        <Card border='partial' padding='24' max>
+          <HStack className={classNames('', {}, [className])} justify='between' max>
+            <Text title={t('profile')} />
+            {canEdit &&
+              <>
+                {readonly &&
+                  <Button
+                    onClick={onEdit}
+                    data-testid='EditableProfileCardHeader.EditButton'
+                  >{t('edit')}</Button>
+                }
+                {!readonly &&
+                  <HStack gap='8'>
+                    <Button
+                      onClick={onCancelEdit}
+                      color='error'
+                      data-testid='EditableProfileCardHeader.CancelButton'
+                    >{t('cancel')}</Button>
+                    <Button
+                      onClick={onSave}
+                      color='success'
+                      data-testid='EditableProfileCardHeader.SaveButton'
+                    >{t('save')}</Button>
+                  </HStack>
+                }
+              </>
+            }
+          </HStack>
+        </Card>
       }
-    </HStack>
+      off={
+        <HStack className={classNames('', {}, [className])} justify='between' max>
+          <TextDeprecated title={t('profile')} />
+          {canEdit &&
+            <>
+              {readonly &&
+                <ButtonDeprecated
+                  theme='outline'
+                  onClick={onEdit}
+                  data-testid='EditableProfileCardHeader.EditButton'
+                >{t('edit')}</ButtonDeprecated>
+              }
+              {!readonly &&
+                <HStack gap='8'>
+                  <ButtonDeprecated
+                    theme='outline_red'
+                    onClick={onCancelEdit}
+                    data-testid='EditableProfileCardHeader.CancelButton'
+                  >{t('cancel')}</ButtonDeprecated>
+                  <ButtonDeprecated
+                    theme='outline'
+                    onClick={onSave}
+                    data-testid='EditableProfileCardHeader.SaveButton'
+                  >{t('save')}</ButtonDeprecated>
+                </HStack>
+              }
+            </>
+          }
+        </HStack>
+      }
+    />
   )
 })

@@ -57,7 +57,7 @@ export const CommentCard = memo(({ className, comment, isLoading }: ICommentCard
     <ToggleFeatures
       feature='isAppRedesigned'
       on={
-        <Card padding='24' border='round' max>
+        <Card padding='24' border='partial' max>
           <VStack
             className={classNames(styles.commentCardRedesigned, {}, [className])}
             gap='8'

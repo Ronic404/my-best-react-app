@@ -47,7 +47,7 @@ const AddCommentForm = memo(({ className, onSendComment }: IAddCommentFormProps)
       <ToggleFeatures
         feature='isAppRedesigned'
         on={
-          <Card padding='24' border='round' max>
+          <Card padding='24' border='partial' max>
             <HStack
               className={classNames(styles.addCommentFormRedesigned, {}, [className])}
               justify='between'

@@ -89,7 +89,7 @@ export const ArticleListItemRedesigned = memo((props: IArticleListItemProps) => 
       target={target}
       data-testid='ArticleListItem'
     >
-      <Card className={styles.card} border='round' padding='0'>
+      <Card className={styles.card} border='partial' padding='0'>
         <AppImage
           className={styles.img}
           src={article.img}

@@ -5,6 +5,7 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 import styles from './Button.module.scss'
 
 type ButtonVariant = 'clear' | 'outline' | 'filled'
+type ButtonColor = 'normal' | 'success' | 'error'
 type ButtonSize = 'm' | 'l' | 'xl'
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,6 +14,10 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    * Тема кнопки. Отвечает за визуал (в рамке, без стилей, противоположный теме приложения цвет и тд)
    */
   variant?: ButtonVariant
+  /**
+   * Цвет кнопки
+   */
+  color?: ButtonColor
   /**
    * Флаг, делающий кнопку квадратной
    */
@@ -43,6 +48,7 @@ export const Button = memo(({
   className,
   children,
   variant = 'outline',
+  color = 'normal',
   square,
   size = 'm',
   disabled,
@@ -60,7 +66,7 @@ export const Button = memo(({
 
   return (
     <button
-      className={classNames(styles.button, mods, [className, styles[variant], styles[size]])}
+      className={classNames(styles.button, mods, [className, styles[variant], styles[color], styles[size]])}
       disabled={disabled}
       {...otherProps}
     >
