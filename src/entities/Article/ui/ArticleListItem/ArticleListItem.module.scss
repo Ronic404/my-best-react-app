@@ -107,8 +107,10 @@
     width: 100%;
   }
 
-  .small {
-    width: 240px;
-    height: 350px;
+  &.small {
+    .card {
+      width: 240px;
+      height: 350px;
+    }
   }
 }

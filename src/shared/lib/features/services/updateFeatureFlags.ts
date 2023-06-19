@@ -11,7 +11,7 @@ interface IUpdateFeatureFlagsOptions {
 }
 
 export const updateFeatureFlag = createAsyncThunk<void, IUpdateFeatureFlagsOptions, ThunkConfig<string>>(
-  'user/saveJsonSettings',
+  'features/updateFeatureFlag',
   async ({ userId, newFeatures }, thunkApi) => {
     const { dispatch, rejectWithValue } = thunkApi
 
@@ -27,6 +27,7 @@ export const updateFeatureFlag = createAsyncThunk<void, IUpdateFeatureFlagsOptio
       }))
 
       setFeatureFlags(allFeatures)
+      window.location.reload()
     } catch (error) {
       console.log(error)
       return rejectWithValue('')
