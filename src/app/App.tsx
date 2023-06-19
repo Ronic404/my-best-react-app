@@ -7,6 +7,7 @@ import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
 import { PageLoader } from '@/widgets/PageLoader'
 import { MainLayout } from '@/shared/layouts/MainLayout'
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ToggleFeatures } from '@/shared/lib/features'
@@ -25,7 +26,17 @@ export const App: FC = () => {
   }, [dispatch, inited])
 
   if (!inited) {
-    return <PageLoader />
+    return (
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        on={
+          <div className={classNames('app_redesigned', {}, [])} id='app'>
+            <AppLoaderLayout />
+          </div>
+        }
+        off={<PageLoader />}
+      />
+    )
   }
 
   return (
