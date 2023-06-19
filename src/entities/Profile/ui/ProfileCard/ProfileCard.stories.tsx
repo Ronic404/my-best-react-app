@@ -5,6 +5,11 @@ import { ProfileCard, IProfileCardProps } from './ProfileCard'
 import { Country } from '../../../../entities/Country'
 import { Currency } from '../../../../entities/Currency'
 
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator'
+
+import { Theme } from '@/shared/constants/theme'
+
 import avatar from '@/shared/assets/tests/avatar.jpg'
 
 export default {
@@ -16,8 +21,7 @@ export default {
 
 const Template: ComponentStory<typeof ProfileCard> = (args: IProfileCardProps) => <ProfileCard {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
+const primaryArgs = {
   data: {
     username: 'admin',
     age: 33,
@@ -28,6 +32,16 @@ Primary.args = {
     avatar,
   },
 }
+
+export const Primary = Template.bind({})
+Primary.args = primaryArgs
+
+export const PrimaryRedesigned = Template.bind({})
+PrimaryRedesigned.args = primaryArgs
+PrimaryRedesigned.decorators = [
+  NewDesignDecorator,
+  ThemeDecorator(Theme.DARK),
+]
 
 export const WithError = Template.bind({})
 WithError.args = {
