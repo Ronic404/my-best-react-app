@@ -6,6 +6,7 @@ import { App } from './app/App'
 import { StoreProvider } from '@/app/providers/StoreProvider'
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary'
 import { ThemeProvider } from '@/app/providers/ThemeProvider'
+import { ForceUpdateProvider } from './shared/lib/render/forceUpdate'
 
 import '@/shared/config/i18n/i18n'
 
@@ -23,9 +24,11 @@ root.render(
   <BrowserRouter>
     <StoreProvider>
       <ErrorBoundary>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
+        <ForceUpdateProvider>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </ForceUpdateProvider>
       </ErrorBoundary>
     </StoreProvider>
   </BrowserRouter>,

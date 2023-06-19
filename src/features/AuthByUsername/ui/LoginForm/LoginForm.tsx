@@ -21,6 +21,7 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 import styles from './LoginForm.module.scss'
@@ -41,6 +42,7 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
   const password = useSelector(getLoginPassword)
   const isLoading = useSelector(getLoginIsLoading)
   const error = useSelector(getLoginError)
+  const forceUpdate = useForceUpdate()
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value))
@@ -54,8 +56,9 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
     const result = await dispatch(loginByUsername({ username, password }))
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess()
+      forceUpdate()
     }
-  }, [dispatch, onSuccess, password, username])
+  }, [dispatch, forceUpdate, onSuccess, password, username])
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

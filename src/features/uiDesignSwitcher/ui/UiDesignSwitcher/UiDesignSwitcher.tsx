@@ -7,6 +7,7 @@ import { HStack } from '@/shared/ui/redesigned/Stack'
 import { ListBox } from '@/shared/ui/redesigned/Popups'
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton'
 
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { getUserAuthData } from '@/entities/User'
 import { getFeatureFlag, updateFeatureFlag } from '@/shared/lib/features'
@@ -21,6 +22,7 @@ export const UiDesignSwitcher = memo(({ className }: IUiDesignSwitcherProps) => 
   const isAppRedesigned = getFeatureFlag('isAppRedesigned')
   const authData = useSelector(getUserAuthData)
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const forceUpdate = useForceUpdate()
 
   const items = [
     {
@@ -43,6 +45,7 @@ export const UiDesignSwitcher = memo(({ className }: IUiDesignSwitcherProps) => 
         },
       })).unwrap()
       setIsLoading(false)
+      forceUpdate()
     }
   }
 
