@@ -10,6 +10,7 @@ import { MainLayout } from '@/shared/layouts/MainLayout'
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout'
 
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppToolbar } from './lib/useAppToolbar'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 
@@ -18,6 +19,7 @@ import { getUserInited, initAuthData } from '../entities/User'
 export const App: FC = () => {
   const dispatch = useAppDispatch()
   const inited = useSelector(getUserInited)
+  const toolbar = useAppToolbar()
 
   useEffect(() => {
     if (!inited) {
@@ -60,6 +62,7 @@ export const App: FC = () => {
               header={<Navbar />}
               content={<AppRouter />}
               sidebar={<Sidebar />}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>
