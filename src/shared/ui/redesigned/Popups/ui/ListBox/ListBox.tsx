@@ -1,4 +1,4 @@
-import { Fragment, ReactNode, useMemo } from 'react'
+import { Fragment, ReactElement, ReactNode, useMemo } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 
 import { Icon } from '../../../Icon'
@@ -31,8 +31,7 @@ interface ListBoxProps<T extends string> {
   onChange: (value: T) => void
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export function ListBox<T extends string>(props: ListBoxProps<T>) {
+export function ListBox<T extends string>(props: ListBoxProps<T>): ReactElement {
   const {
     className,
     items,
@@ -63,10 +62,13 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         disabled={readOnly}
         onChange={onChange}
       >
-        <HListBox.Button className={styles.trigger} as='div'>
-          <Button variant='filled' disabled={readOnly} addonRight={<Icon Svg={ArrowIcon} />}>
-            {selectedItem?.content ?? defaultValue}
-          </Button>
+        <HListBox.Button
+          as={Button}
+          variant='filled'
+          disabled={readOnly}
+          addonRight={<Icon Svg={ArrowIcon} />}
+        >
+          {selectedItem?.content ?? defaultValue}
         </HListBox.Button>
 
         <HListBox.Options className={classNames(styles.options, {}, optionsClasses)}>

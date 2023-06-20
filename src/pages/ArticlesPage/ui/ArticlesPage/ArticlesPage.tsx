@@ -12,7 +12,6 @@ import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
 
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import { useArticleItemById } from '../../model/selectors/articlesPageSelectors'
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 
@@ -34,9 +33,6 @@ const reducers: ReducersList = {
 const ArticlesPage: FC<IArticlesPageProps> = ({ className }) => {
   const dispatch = useAppDispatch()
   const [searchParams] = useSearchParams()
-  const articleItem = useArticleItemById('2')
-
-  console.log(articleItem)
 
   useInitialEffect(() => {
     dispatch(initArticlesPage(searchParams))
